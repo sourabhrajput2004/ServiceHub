@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Repairs - ServiceHub</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+<body>
+
+
+    <!-- ============================== -->
+    <!-- NAVBAR -->
+    <!-- ============================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <a href="../index.html">
+                ServiceHub
+            </a>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="../login.html">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ============================== -->
+    <!-- CUSTOMER DASHBOARD -->
+    <!-- ============================== -->
+
+    <main class="customer-dashboard">
+
+
+        <!-- ============================== -->
+        <!-- HAMBURGER -->
+        <!-- ============================== -->
+
+        <input
+            type="checkbox"
+            id="sidebar-toggle"
+            class="sidebar-toggle"
+        >
+
+
+        <label
+            for="sidebar-toggle"
+            class="hamburger-button"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </label>
+
+
+
+        <!-- ============================== -->
+        <!-- SIDEBAR -->
+        <!-- ============================== -->
+
+        <aside class="dashboard-sidebar">
+
+
+            <div class="sidebar-header">
+
+                <h2>
+                    Customer Panel
+                </h2>
+
+            </div>
+
+
+            <!-- Sidebar Menu -->
+
+            <nav class="dashboard-menu">
+
+                <a href="customer-dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="find-shop.html">
+                    Find a Shop
+                </a>
+
+                <a
+                    href="my-repair.html"
+                    class="active"
+                >
+                    My Repairs
+                </a>
+
+                <a href="payments.html">
+                    Payments
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+            </nav>
+
+
+        </aside>
+
+
+
+        <!-- ============================== -->
+        <!-- MAIN CONTENT -->
+        <!-- ============================== -->
+
+        <section class="dashboard-content">
+
+
+            <!-- Page Header -->
+
+            <div class="dashboard-welcome">
+
+                <h1>
+                    My Repairs
+                </h1>
+
+                <p>
+                    Track all your repair requests.
+                </p>
+
+            </div>
+
+
+
+            <!-- ============================== -->
+            <!-- REPAIR FILTERS -->
+            <!-- ============================== -->
+
+            <div class="repair-filter">
+
+                <button class="filter-btn active">
+                    All
+                </button>
+
+                <button class="filter-btn">
+                    Pending
+                </button>
+
+                <button class="filter-btn">
+                    Assigned
+                </button>
+
+                <button class="filter-btn">
+                    In Progress
+                </button>
+
+                <button class="filter-btn">
+                    Completed
+                </button>
+
+            </div>
+
+
+
+            <!-- ============================== -->
+            <!-- REPAIR HISTORY SECTION -->
+            <!-- ============================== -->
+
+            <div class="dashboard-section">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Repair History
+                        </h2>
+
+                        <p>
+                            View and track all your repair requests.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Repair Card 1 -->
+
+                <div class="repair-history-card">
+
+                    <div class="repair-history-info">
+
+                        <h3>
+                            Laptop Screen Repair
+                        </h3>
+
+                        <p>
+                            Shop: Sharma Repair Shop
+                        </p>
+
+                        <p>
+                            Request ID: SH-1001
+                        </p>
+
+                        <p>
+                            Date: 25 Sept 2026
+                        </p>
+
+                    </div>
+
+
+                    <div class="repair-history-status">
+
+                        <span class="status-assigned">
+                            Assigned
+                        </span>
+
+                        <a
+                            href="track-repair.html"
+                            class="dashboard-button"
+                        >
+                            Track Repair
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Repair Card 2 -->
+
+                <div class="repair-history-card">
+
+                    <div class="repair-history-info">
+
+                        <h3>
+                            Mobile Battery Replacement
+                        </h3>
+
+                        <p>
+                            Shop: Gupta Electronics
+                        </p>
+
+                        <p>
+                            Request ID: SH-1002
+                        </p>
+
+                        <p>
+                            Date: 22 Sept 2026
+                        </p>
+
+                    </div>
+
+
+                    <div class="repair-history-status">
+
+                        <span class="status-progress">
+                            In Progress
+                        </span>
+
+                        <a
+                            href="track-repair.html"
+                            class="dashboard-button"
+                        >
+                            Track Repair
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Repair Card 3 -->
+
+                <div class="repair-history-card">
+
+                    <div class="repair-history-info">
+
+                        <h3>
+                            Washing Machine Repair
+                        </h3>
+
+                        <p>
+                            Shop: HomeFix Services
+                        </p>
+
+                        <p>
+                            Request ID: SH-1003
+                        </p>
+
+                        <p>
+                            Date: 18 Sept 2026
+                        </p>
+
+                    </div>
+
+
+                    <div class="repair-history-status">
+
+                        <span class="status-completed">
+                            Completed
+                        </span>
+
+                        <a
+                            href="#"
+                            class="dashboard-button"
+                        >
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ============================== -->
+    <!-- FOOTER -->
+    <!-- ============================== -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 ServiceHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

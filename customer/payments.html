@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Payments - ServiceHub</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+<body>
+
+
+    <!-- ============================== -->
+    <!-- NAVBAR -->
+    <!-- ============================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <a href="../index.html">
+                ServiceHub
+            </a>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="../login.html">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ============================== -->
+    <!-- CUSTOMER DASHBOARD -->
+    <!-- ============================== -->
+
+    <main class="customer-dashboard">
+
+
+        <!-- ============================== -->
+        <!-- HAMBURGER -->
+        <!-- ============================== -->
+
+        <input
+            type="checkbox"
+            id="sidebar-toggle"
+            class="sidebar-toggle"
+        >
+
+
+        <label
+            for="sidebar-toggle"
+            class="hamburger-button"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </label>
+
+
+
+        <!-- ============================== -->
+        <!-- SIDEBAR -->
+        <!-- ============================== -->
+
+        <aside class="dashboard-sidebar">
+
+
+            <div class="sidebar-header">
+
+                <h2>
+                    Customer Panel
+                </h2>
+
+            </div>
+
+
+            <nav class="dashboard-menu">
+
+
+                <a href="customer-dashboard.html">
+                    Dashboard
+                </a>
+
+
+                <a href="find-shop.html">
+                    Find a Shop
+                </a>
+
+
+                <a href="my-repair.html">
+                    My Repairs
+                </a>
+
+
+                <a
+                    href="payments.html"
+                    class="active"
+                >
+                    Payments
+                </a>
+
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+
+            </nav>
+
+
+        </aside>
+
+
+
+        <!-- ============================== -->
+        <!-- MAIN CONTENT -->
+        <!-- ============================== -->
+
+        <section class="dashboard-content">
+
+
+            <!-- Page Header -->
+
+            <div class="dashboard-welcome">
+
+                <h1>
+                    Payments
+                </h1>
+
+                <p>
+                    View your repair payments and payment history.
+                </p>
+
+            </div>
+
+
+
+            <!-- ============================== -->
+            <!-- PAYMENT SUMMARY -->
+            <!-- ============================== -->
+
+            <section class="payment-summary">
+
+
+                <div class="payment-summary-card">
+
+                    <span>
+                        Total Paid
+                    </span>
+
+                    <h2>
+                        ₹8,450
+                    </h2>
+
+                </div>
+
+
+
+                <div class="payment-summary-card">
+
+                    <span>
+                        Pending Payment
+                    </span>
+
+                    <h2>
+                        ₹1,500
+                    </h2>
+
+                </div>
+
+
+
+                <div class="payment-summary-card">
+
+                    <span>
+                        Total Transactions
+                    </span>
+
+                    <h2>
+                        6
+                    </h2>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- PENDING PAYMENT -->
+            <!-- ============================== -->
+
+            <section class="payment-section">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Pending Payment
+                        </h2>
+
+                        <p>
+                            Payments that are yet to be completed.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="pending-payment-card">
+
+
+                    <div class="payment-info">
+
+                        <h3>
+                            Laptop Screen Repair
+                        </h3>
+
+                        <p>
+                            Sharma Repair Shop
+                        </p>
+
+                        <span>
+                            Repair ID: SH-1001
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="payment-amount">
+
+                        <span>
+                            Amount Due
+                        </span>
+
+                        <h2>
+                            ₹1,500
+                        </h2>
+
+                        <button class="payment-button">
+                            Pay Now
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- PAYMENT HISTORY -->
+            <!-- ============================== -->
+
+            <section class="payment-section">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Payment History
+                        </h2>
+
+                        <p>
+                            Your previous repair payments.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="payment-history">
+
+
+                    <!-- Payment 1 -->
+
+                    <div class="payment-history-card">
+
+
+                        <div class="payment-history-info">
+
+                            <h3>
+                                Mobile Battery Replacement
+                            </h3>
+
+                            <p>
+                                Gupta Electronics
+                            </p>
+
+                            <span>
+                                Repair ID: SH-1002
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="payment-history-details">
+
+                            <h3>
+                                ₹1,200
+                            </h3>
+
+                            <span class="payment-status paid">
+                                Paid
+                            </span>
+
+                            <p>
+                                22 Sept 2026
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Payment 2 -->
+
+                    <div class="payment-history-card">
+
+
+                        <div class="payment-history-info">
+
+                            <h3>
+                                Washing Machine Repair
+                            </h3>
+
+                            <p>
+                                HomeFix Services
+                            </p>
+
+                            <span>
+                                Repair ID: SH-1003
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="payment-history-details">
+
+                            <h3>
+                                ₹2,750
+                            </h3>
+
+                            <span class="payment-status paid">
+                                Paid
+                            </span>
+
+                            <p>
+                                18 Sept 2026
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Payment 3 -->
+
+                    <div class="payment-history-card">
+
+
+                        <div class="payment-history-info">
+
+                            <h3>
+                                Mobile Display Repair
+                            </h3>
+
+                            <p>
+                                Sharma Repair Shop
+                            </p>
+
+                            <span>
+                                Repair ID: SH-0998
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="payment-history-details">
+
+                            <h3>
+                                ₹2,500
+                            </h3>
+
+                            <span class="payment-status paid">
+                                Paid
+                            </span>
+
+                            <p>
+                                10 Sept 2026
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ============================== -->
+    <!-- FOOTER -->
+    <!-- ============================== -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 ServiceHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

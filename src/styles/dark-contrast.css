@@ -1,0 +1,73 @@
+/* Dark-only contrast corrections. Scoped selectors also cover lazy-loaded pages. */
+:root[data-theme=dark]{
+ --customer-page-text:#e5edf8;
+ --sv-bg:#101e2e;--sv-panel:#192d43;--sv-text:#e5edf8;--sv-muted:#b8c9de;--sv-border:#435b76;
+ --wf-bg:#101e2e;--wf-panel:#192d43;--wf-text:#e5edf8;--wf-muted:#b8c9de;--wf-line:#435b76;--wf-blue:#a9ccff;
+ --biz-panel:#192d43;--biz-text:#e5edf8;--biz-muted:#b8c9de;--biz-border:#435b76;--biz-soft:#20374f;
+}
+:root[data-theme=dark] #root :is(.wf-shell,.wf-page,.wf-modal,.biz-page,.biz-finance,.biz-dialog,.bc-page,.member-access){
+ --wf-bg:#101e2e;--wf-panel:#192d43;--wf-text:#e5edf8;--wf-muted:#b8c9de;--wf-line:#435b76;--wf-blue:#a9ccff;
+ --sv-panel:#192d43;--sv-text:#e5edf8;--sv-muted:#b8c9de;--sv-border:#435b76;
+ --biz-panel:#192d43;--biz-text:#e5edf8;--biz-muted:#b8c9de;--biz-border:#435b76;--biz-soft:#20374f;
+ color:#e5edf8;
+}
+:root[data-theme=dark] #root :is(.text-black,.text-gray-900,.text-gray-800,.text-gray-700,.text-zinc-900,.text-zinc-800,.text-slate-950,.text-slate-900,.text-slate-800,.text-slate-700){color:#e5edf8!important}
+:root[data-theme=dark] #root :is(.text-gray-600,.text-gray-500,.text-gray-400,.text-slate-600,.text-slate-500,.text-slate-400,.text-slate-300){color:#b8c9de!important}
+:root[data-theme=dark] #root :is(.text-blue-600,.text-blue-700,.text-blue-800,.text-blue-900,.text-indigo-600,.text-indigo-700){color:#a9ccff!important}
+:root[data-theme=dark] #root :is(.text-red-500,.text-red-600,.text-red-700,.text-rose-600,.text-rose-700){color:#ffb6c0!important}
+:root[data-theme=dark] #root :is(.text-emerald-600,.text-emerald-700,.text-green-600,.text-green-700){color:#9ee7c9!important}
+:root[data-theme=dark] #root :is(.text-amber-600,.text-amber-700,.text-yellow-700){color:#f5d48c!important}
+/* Keep text paired with a dark surface, including page footers and dialogs. */
+:root[data-theme=dark] #root :is(.bg-gray-50,.bg-gray-100,.bg-gray-200,.bg-zinc-50,.bg-slate-50,.bg-slate-100){background-color:#172a40;border-color:#435b76}
+:root[data-theme=dark] #root :is(dialog,.wf-modal,.biz-dialog){background:#192d43;color:#e5edf8;border-color:#435b76}
+:root[data-theme=dark] #root :is(.biz-table,.wf-table table,.ma-day-table table){color:#e5edf8}
+:root[data-theme=dark] #root :is(.biz-table,.wf-table table,.ma-day-table table) :is(th,td){border-color:#435b76}
+:root[data-theme=dark] #root :is(.biz-table,.wf-table table,.ma-day-table table) th{background:#20374f;color:#c9d9ed}
+:root[data-theme=dark] #root :is(.biz-count,.biz-icon,.biz-eyebrow,.wf-eyebrow,.tech-edit,.md-count,.md-info-sections dt){color:#b9d6ff}
+:root[data-theme=dark] #root :is(.tech-edit,.biz-icon,.biz-count){background:#243e5d;border-color:#49678c}
+:root[data-theme=dark] #root :is(.tech-account-read dt,.tech-account-heading p,.tech-account-actions p,.mt-stats dt,.ma-payroll>p,.ma-date-controls label,.ma-calendar-grid small){color:#b8c9de}
+:root[data-theme=dark] #root :is(.tech-account-read dd,.tech-account h1,.tech-account h2,.ma-explorer h3,.ma-period-totals dd,.mt-stats dd){color:#e5edf8}
+:root[data-theme=dark] #root :is(.ma-period-tabs button,.wf-tabs button){background:#20374f;color:#d6e5f8;border-color:#496482}
+:root[data-theme=dark] #root :is(.ma-period-tabs button,.wf-tabs button)[aria-pressed=true]{background:#2c4f79;color:#eaf3ff;border-color:#83b3f4}
+:root[data-theme=dark] #root .ma-day-status{background:#29415b;color:#c5d5e8}
+:root[data-theme=dark] #root :is(.ma-day-status.present,.wf-badge.ACTIVE,.wf-badge.PAID,.wf-badge.COMPLETED){background:#194838;color:#a6edcd}
+:root[data-theme=dark] #root :is(.ma-day-status.absent,.wf-badge.REJECTED,.wf-badge.DISPUTED){background:#4c2936;color:#ffbfcb}
+:root[data-theme=dark] #root :is(.ma-day-status.late,.wf-badge.LOW,.wf-badge.REVIEW){background:#493c22;color:#f5d48c}
+:root[data-theme=dark] #root .ma-calendar{background:#192d43;border-color:#435b76;box-shadow:0 12px 36px #0008}
+:root[data-theme=dark] #root :is(.mn-sidebar nav a.active,.mn-drawer nav a.active){background:#27486d;color:#d0e5ff}
+:root[data-theme=dark] #root :is(.mn-brand strong,.mn-drawer-person strong,.mn-sidebar-identity strong,.mn-person){color:#e5edf8}
+:root[data-theme=dark] #root .mn-person{background:#1c443c;color:#b9efdc;border-color:#457767}
+:root[data-theme=dark] #root .mn-role-icon{background:#203b59;color:#b9d6ff;border-color:#496482}
+:root[data-theme=dark] #root .mn-brand .mn-hub-label{color:#92e4c7}
+/* Native controls need their own foreground, including disabled/read-only values. */
+:root[data-theme=dark] #root :is(input:not([type=checkbox]):not([type=radio]),select,textarea){color-scheme:dark;color:#e5edf8;border-color:#4a6381}
+:root[data-theme=dark] #root :is(input,textarea)::placeholder{color:#aebfd4;opacity:1}
+:root[data-theme=dark] #root :is(input,select,textarea):disabled{background:#22364d;color:#c5d2e3;-webkit-text-fill-color:#c5d2e3;opacity:1}
+:root[data-theme=dark] #root :is(select option,select optgroup){background:#192d43;color:#e5edf8}
+:root[data-theme=dark] #root input[type=file]{background:#172a40;color:#c5d5e8}
+:root[data-theme=dark] #root input[type=file]::file-selector-button{background:#294768;color:#e5edf8;border:1px solid #597797;border-radius:6px;padding:6px 10px;margin-right:10px}
+:root[data-theme=dark] #root :is(.wf-error,.biz-error,.support-error){color:#ffb6c0}
+:root[data-theme=dark] #root :is(.wf-primary,.biz-primary,.rw-primary,.bg-blue-600,.bg-blue-700,.bg-emerald-600){color:#fff!important}
+:root[data-theme=dark] #root :is(button,a,input,select,textarea):focus-visible{outline-color:#9fc7ff;outline-offset:3px}
+:root[data-theme=dark] #root .service-footer{background:#14263c;color:#b8c9de;border-color:#435b76}
+:root[data-theme=dark] #root .service-footer :is(h2,a){color:#dce9fb}
+
+/* Classless titles and empty states inherit page colors, not utility classes. */
+:root[data-theme=dark] #root .app-content :is(.workspace-page,.customer-overview,.sv-account-content,.seller-workspace-shell,.customer-workspace-shell){
+ --sv-text:#e5edf8;--sv-muted:#b8c9de;--sv-panel:#192d43;--sv-bg:#101e2e;--sv-border:#435b76;--sv-soft:#20374f;--sv-blue:#a9ccff;
+ --cu-soft:#20374f;--sa-soft:#20374f;--customer-page-text:#e5edf8;color:#e5edf8;
+}
+:root[data-theme=dark] #root .app-content :is(.workspace-page,.customer-overview,.sv-account-content) :is(h1,h2,h3,h4){color:#e5edf8}
+:root[data-theme=dark] #root .app-content :is(.rw-empty,.wf-empty,.md-empty,.cu-empty){color:#b8c9de;border-color:#4a6381;background:#172a40}
+:root[data-theme=dark] #root .app-content :is(.rw-empty,.wf-empty,.md-empty,.cu-empty) :is(h1,h2,h3,strong){color:#e5edf8}
+:root[data-theme=dark] #root .app-content :is(.rw-empty,.wf-empty,.md-empty,.cu-empty)>svg{color:#a9ccff}
+:root[data-theme=dark] #root .app-content :is(.rw-card-header,.cu-heading,.sd-heading,.settings-heading)>div>p:not(.cu-eyebrow){color:#b8c9de}
+:root[data-theme=dark] #root .app-content .customer-repairs-workspace>.rw-card-header>div>h1{color:#e5edf8}
+:root[data-theme=dark] #root .app-content :is(.cu-eyebrow,.biz-eyebrow){color:#a9ccff}
+:root[data-theme=dark] #root .settings-save-bar button.account-primary:disabled{background:#293d54;color:#c5d2e3;border-color:#4a6381}
+/* Light mode uses dark text on its light empty-state and heading surfaces. */
+:root:not([data-theme=dark]) #root .app-content .customer-repairs-workspace{--customer-page-text:#243f3a;color:#243f3a}
+:root:not([data-theme=dark]) #root .app-content .customer-repairs-workspace>.rw-card-header h1{color:#18334e}
+:root:not([data-theme=dark]) #root .app-content .customer-repairs-workspace>.rw-card-header>div>p:not(.cu-eyebrow){color:#52677e}
+:root:not([data-theme=dark]) #root .app-content :is(.rw-empty,.wf-empty,.md-empty,.cu-empty){color:#52677e}
+:root:not([data-theme=dark]) #root .app-content :is(.rw-empty,.wf-empty,.md-empty,.cu-empty) :is(h1,h2,h3,strong){color:#18334e}

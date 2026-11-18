@@ -1,0 +1,137 @@
+﻿:root { color-scheme:light; }
+.theme-switch { display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; min-width:48px; flex-shrink:0; padding:10px; border:1px solid #cbd8e9; border-radius:12px; color:#244d7d; background:linear-gradient(145deg,#fff,#e9f0f8); box-shadow:0 2px 0 #d6e0ed; cursor:pointer; }
+.theme-switch:hover { background:#dce8f7; }
+.theme-switch:focus-visible { outline:3px solid #5484d1; outline-offset:4px; }
+:root[data-theme=dark] {color-scheme:dark;--surface-border:#354963;--surface-shadow:0 2px 0 #0b1423,0 12px 28px -12px #0008,inset 0 1px 0 #ffffff0a;--primary-shadow:0 3px 0 #153873,0 7px 16px -5px #0007;}
+:root[data-theme=dark] body {background:#0e192b;color:#dce6f4;}
+:root[data-theme=dark] #root {background:radial-gradient(ellipse at 8% 8%,#192f4c,transparent 48%),radial-gradient(ellipse at 98% 65%,#152b3d,transparent 46%),#0e192b;}
+:root[data-theme=dark] #root>div {background:transparent;color:#dce6f4;}
+:root[data-theme=dark] .service-navbar {background:linear-gradient(110deg,#142238f5,#111f33f5);border-color:#31445f;box-shadow:0 5px 24px #0003,inset 0 1px 0 #ffffff08;}
+:root[data-theme=dark] .service-navbar .public-mobile-nav {background:#142238;border-color:#31445f;}
+:root[data-theme=dark] .service-navbar :is(.desktop-main-nav>a,.public-mobile-nav>a) {color:#d0ddef;}
+:root[data-theme=dark] .service-navbar :is(.desktop-main-nav>a,.public-mobile-nav>a)[aria-current=page] {color:#9dc5ff;}
+:root[data-theme=dark] .service-navbar .public-nav-link[aria-current=page]:after {background:#8fbaff;}
+:root[data-theme=dark] .service-navbar .language-switch,:root[data-theme=dark] .theme-switch {background:linear-gradient(145deg,#233751,#1b2c44);color:#deebfb;border-color:#415776;box-shadow:0 2px 0 #0a1525;}
+:root[data-theme=dark] .theme-switch:hover {background:#2d4668;}
+:root[data-theme=dark] .app-content .workspace-page {background:transparent;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is(.text-slate-900,.text-slate-800,.text-slate-700) {color:#e2ebf7;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is(.text-slate-600,.text-slate-500,.text-slate-400) {color:#b7c7dc;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is(.text-blue-600,.text-blue-700,.text-indigo-600,.text-indigo-700) {color:#9ac2ff;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is(.text-emerald-600,.text-emerald-700,.text-emerald-800,.text-green-700) {color:#8cdec0;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is(.text-red-600,.text-red-700) {color:#ffb0b8;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is(.text-amber-600,.text-amber-700,.text-amber-800) {color:#f1cd88;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) [class~="bg-white"] {background:linear-gradient(145deg,#1e3048,#19283e);border-color:#354963;box-shadow:var(--surface-shadow);}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is([class~="bg-white/95"],[class~="bg-white/90"]) {background:#1b2c44f5;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is(.bg-slate-50,.bg-slate-100,.bg-slate-200) {background-color:#17273c;border-color:#354963;}
+:root[data-theme=dark] .app-content .workspace-page.bg-slate-50 {background:transparent;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is(.bg-blue-50,.bg-blue-100,.bg-indigo-50,.bg-indigo-100) {background-color:#213d63;border-color:#3b608c;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is(.bg-emerald-50,.bg-emerald-100,.bg-green-50,.bg-green-100) {background-color:#173e35;border-color:#386955;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is(.bg-red-50,.bg-red-100) {background-color:#462832;border-color:#77505d;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is(.bg-amber-50,.bg-amber-100) {background-color:#463a27;border-color:#706046;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is(.border-slate-100,.border-slate-200,.border-slate-300) {border-color:#354963;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) :is(.hover\:bg-slate-50,.hover\:bg-slate-100):hover {background:#2a405c;}
+:root[data-theme=dark] :is(.app-content,.service-navbar) .hover\:bg-emerald-50:hover {background:#244c40;}
+:root[data-theme=dark] .app-content :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea) {background:#111f32;color:#e2ebf7;border-color:#435a78;box-shadow:inset 0 2px 4px #0003;}
+:root[data-theme=dark] :is(input,textarea)::placeholder {color:#a9bad1;}
+:root[data-theme=dark] .app-content :is(input,select,textarea):focus {background:#172b44;border-color:#83aeef;}
+:root[data-theme=dark] :is(.page-customer,.page-workshop,.page-profile,.page-directory)>div:first-child {background:linear-gradient(120deg,#203c60,#22344e 65%,#1b3648);border-color:#3c5474;box-shadow:inset 0 1px 0 #ffffff12,0 9px 28px -18px #0009;}
+:root[data-theme=dark] :is(.page-customer,.page-workshop,.page-profile,.page-directory)>div:first-child h1 {color:#e6effc;}
+:root[data-theme=dark] .page-customer>.grid>div:nth-child(1) {background:linear-gradient(145deg,#233a56,#1a2d47);border-top-color:#7eabef;}
+:root[data-theme=dark] .page-customer>.grid>div:nth-child(2) {background:linear-gradient(145deg,#203e3c,#19312f);border-top-color:#6cc6a7;}
+:root[data-theme=dark] .page-customer>.grid>div:nth-child(3) {background:linear-gradient(145deg,#2b3550,#202c42);border-top-color:#a4b2d1;}
+:root[data-theme=dark] .page-customer>.grid>div:nth-child(4) {background:linear-gradient(145deg,#41382d,#302b25);border-top-color:#d9b277;}
+:root[data-theme=dark] .page-directory .shop-directory-grid>div {background:linear-gradient(145deg,#20344f,#192a41);border-color:#3b5272;box-shadow:var(--surface-shadow);}
+:root[data-theme=dark] .page-directory .shop-cover {background:linear-gradient(120deg,#243e5b,#1b2e46);}
+:root[data-theme=dark] .page-directory .shop-cover>img {border-color:#3b5272;}
+:root[data-theme=dark] .app-content :is(.page-login,.page-register) {background:radial-gradient(ellipse at 20% 30%,#1a3454,transparent 55%),radial-gradient(ellipse at 80% 70%,#23314a,transparent 50%)!important;}
+/* Marketing surfaces, diagrams and form panels use the same dark palette. */
+:root[data-theme=dark] .marketing {--ink:#e2ebf7;--muted:#b7c7dc;--accent:#98c0ff;color:#e2ebf7;background:transparent;}
+:root[data-theme=dark] .app-content .marketing .home-hero {background:radial-gradient(ellipse at 8% 12%,#213d60,transparent 48%),radial-gradient(ellipse at 98% 70%,#26364f,transparent 50%),linear-gradient(125deg,#14243b,#1b3049);border-color:#354963;}
+:root[data-theme=dark] .app-content .marketing :is(.eyebrow,.field-caption,.visual-caption,.visual-footnote,.local-note,.form-kicker,.manifesto-location) {color:#b7cbe5;}
+:root[data-theme=dark] .marketing h1>span,:root[data-theme=dark] .marketing .about-manifesto h2 span {color:#a1c5ff;text-shadow:none;}
+:root[data-theme=dark] .app-content .marketing :is(.repair-finder,.repair-preview,.floating-check,.contact-form-card,.audience-panel,.faq-list,.principle-grid article) {background:linear-gradient(145deg,#20344f,#192a41);border-color:#3c5474;box-shadow:var(--surface-shadow);}
+:root[data-theme=dark] .app-content .marketing :is(.benefits-ribbon,.how-section,.audience-section,.about-manifesto,.about-contact,.repair-help-note) {background:linear-gradient(120deg,#20344f,#1c2c43 65%,#1e3545);border-color:#3c5474;}
+:root[data-theme=dark] .app-content .marketing .service-tile {background:linear-gradient(135deg,#263e5a,#1c2d44);color:#a4c4ed;border-color:#405a7d;box-shadow:var(--surface-shadow);}
+:root[data-theme=dark] .app-content .marketing .service-tile h3 {color:#e2ebf7;}
+:root[data-theme=dark] .app-content .marketing .service-tile.orange {background:linear-gradient(135deg,#40392e,#302c26);color:#e1c397;}
+:root[data-theme=dark] .app-content .marketing .service-tile.green {background:linear-gradient(135deg,#233e41,#1a3035);color:#a4d3d3;}
+:root[data-theme=dark] .app-content .marketing .device-switch button {color:#c1d0e4;}
+:root[data-theme=dark] .app-content .marketing .device-switch button.selected {background:#2b4d79;color:#d6e8ff;}
+:root[data-theme=dark] .app-content .marketing .device-switch button:hover {background:#304866;}
+:root[data-theme=dark] .app-content .marketing .location-select select {color:#dce9fa;}
+:root[data-theme=dark] .app-content .marketing :is(.preview-header small,.floating-check small,.preview-status strong small,.repair-preview>p,.hero-reassurance span,.benefits-ribbon small,.how-number) {color:#b7c7dc;}
+:root[data-theme=dark] .app-content .marketing .preview-status>span {background:#24483e;color:#ade2cb;}
+:root[data-theme=dark] .app-content .marketing .preview-track button {color:#bacce3;}
+:root[data-theme=dark] .app-content .marketing .preview-track button:before {background:#3e5270;}
+:root[data-theme=dark] .app-content .marketing .preview-track button.done:before {background:#6b9eed;}
+:root[data-theme=dark] .app-content .marketing .preview-track button>span {border-color:#20344f;background:#40536e;}
+:root[data-theme=dark] .app-content .marketing .preview-track button.done>span {background:#447cca;color:white;}
+:root[data-theme=dark] .app-content .marketing :is(.audience-tabs,.contact-method>span,.preview-icon) {background:#294464;color:#c8defa;}
+:root[data-theme=dark] .app-content .marketing .audience-tabs button {color:#bed0e6;}
+:root[data-theme=dark] .app-content .marketing .audience-tabs button.active {background:#385981;color:#fff;}
+:root[data-theme=dark] .app-content .marketing :is(.contact-method p,.faq-item h3 button) {color:#dce9fa;}
+:root[data-theme=dark] .app-content .marketing :is(.device-switch,.how-step,.faq-item,.repair-preview>p,.about-story,.faq-section) {border-color:#3b506c;}
+:root[data-theme=dark] .marketing .visual-orbit {background:radial-gradient(ellipse,#2e486d45,transparent 70%);border-color:#3f5b80;}
+:root[data-theme=dark] .service-footer {background:linear-gradient(115deg,#0b1525,#12233a);border-color:#31445f;}
+/* Printed receipts remain ink-friendly in either theme. */
+@media print {
+ :root[data-theme=dark] body,:root[data-theme=dark] #root,:root[data-theme=dark] #root>div,:root[data-theme=dark] .app-content {background:#fff!important;color:#111!important;color-scheme:light;}
+ :root[data-theme=dark] .app-content :is(div,p,span,th,td,h1,h2,h3) {color:#111!important;background-color:transparent!important;background-image:none!important;box-shadow:none!important;}
+ .theme-switch {display:none!important;}
+}
+/* The admin console also follows the selected light theme. */
+:root:not([data-theme=dark]) .app-content .admin-page {background:transparent;color:#233952;}
+:root:not([data-theme=dark]) .admin-page :is([class~="bg-slate-800/80"],[class~="bg-slate-800/90"],[class~="bg-slate-800/40"],.bg-slate-800) {background:#edf2f8;color:#233952;border-color:#cbd8e8;}
+:root:not([data-theme=dark]) .admin-page :is([class~="bg-slate-900/90"],[class~="bg-slate-900/80"],.bg-slate-900) {background:#fff;color:#233952;border-color:#cbd8e8;}
+:root:not([data-theme=dark]) .admin-page :is(.text-slate-100,.text-slate-200,.text-slate-300,.text-slate-400) {color:#425873;}
+:root:not([data-theme=dark]) .admin-page :is(h1,h2,h3).text-white {color:#172d49;}
+:root:not([data-theme=dark]) .admin-page .text-emerald-400 {color:#16654c;}
+:root:not([data-theme=dark]) .admin-page .text-blue-400 {color:#245bb2;}
+:root:not([data-theme=dark]) .admin-page .text-amber-400 {color:#8b5d14;}
+:root:not([data-theme=dark]) .admin-page :is(.border-slate-700,.border-slate-800,[class~="border-slate-700/80"]) {border-color:#cbd8e8;}
+@media(min-width:1280px) and (max-width:1499px){
+ .service-navbar .navbar-shell{column-gap:10px;}
+ .service-navbar .desktop-main-nav{gap:10px;}
+ .service-navbar .navbar-actions{gap:7px;}
+ .service-navbar .navbar-actions button>span.truncate{max-width:95px;}
+ .service-navbar .theme-switch{width:44px;min-width:44px;height:48px;padding:8px;}
+ .service-navbar .language-switch select{max-width:90px;}
+}
+/* A full-width reading indicator sits on the sticky header's lower edge. */
+.service-navbar .scroll-progress { --scroll-progress:0; position:absolute; left:0; right:0; bottom:0; height:4px; background:#dbe5f3; pointer-events:none; overflow:hidden; }
+.scroll-progress-fill { display:block; width:100%; height:100%; background:linear-gradient(90deg,#245bb2,#5286e8); transform:scaleX(var(--scroll-progress)); transform-origin:left center; }
+:root[data-theme=dark] .service-navbar .scroll-progress {background:#263c58;}
+:root[data-theme=dark] .scroll-progress-fill {background:linear-gradient(90deg,#72a2ee,#b0d2ff);}
+@media(forced-colors:active){.service-navbar .scroll-progress{background:Canvas;}.scroll-progress-fill{background:Highlight;}}
+@media print{.scroll-progress{display:none;}}
+/* Keep contact labels clear against dark navy surfaces. */
+:root[data-theme=dark] .app-content .marketing .contact-method small {
+ display:block;
+ color:#b8d0ef;
+ font-weight:600;
+ letter-spacing:.5px;
+ line-height:1.5;
+ margin-bottom:8px;
+}
+:root[data-theme=dark] .app-content .marketing .contact-method>span {
+ background:linear-gradient(145deg,#294565,#203650);
+ color:#d5e6ff;
+ border:1px solid #4e6b8e;
+ box-shadow:0 2px 0 #0d1c30,inset 0 1px 0 #ffffff10;
+}
+:root[data-theme=dark] .app-content .marketing .contact-method a {color:#edf4ff;}
+:root[data-theme=dark] .app-content .marketing .contact-method a:hover {color:#a8ccff;}
+/* Native language choices need an opaque dark background when opened. */
+:root[data-theme=dark] .service-navbar .language-switch select {
+ color-scheme:dark;
+ color:#e5eefb;
+ background-color:#20344f;
+}
+:root[data-theme=dark] .service-navbar .language-switch select option {
+ background-color:#20344f;
+ color:#e5eefb;
+}
+:root[data-theme=dark] .service-navbar .language-switch select option:checked {
+ background-color:#355e94;
+ color:#fff;
+}

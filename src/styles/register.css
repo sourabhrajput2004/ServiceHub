@@ -1,0 +1,64 @@
+﻿#root .app-content .page-register{align-items:flex-start;padding:64px 28px 80px;min-height:0}
+#root .page-register .register-shell{max-width:1120px;margin:0 auto;padding:48px;background:linear-gradient(145deg,#ffffffed,#f6f9ffed);border:1px solid #d5dfed;border-radius:30px;box-shadow:0 20px 65px #244d7820;}
+#root .page-register .register-heading{text-align:center;max-width:880px;margin:0 auto 38px;}
+#root .page-register .register-heading h2{font-size:clamp(30px,3vw,42px);line-height:1.45;letter-spacing:-.7px;color:#193450;font-weight:800;text-wrap:balance;margin:0 0 16px;}
+#root .page-register .register-heading p{font-size:20px;line-height:1.8;max-width:760px;margin:0 auto;color:#526a81;}
+#root .page-register .register-role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;}
+#root .page-register .register-role-card{appearance:none;width:100%;text-align:left;padding:30px;border:1px solid #d1dfed;background:linear-gradient(145deg,#fff,#f0f6ff);border-radius:22px;gap:26px;box-shadow:0 5px 18px #223f6410;transition:transform .2s,box-shadow .2s,border-color .2s;}
+#root .page-register .register-role-card:nth-child(2){background:linear-gradient(145deg,#fff,#f1f0fc);border-color:#d8d5eb;}
+#root .page-register .register-role-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px #25496e18;border-color:#729cdb;}
+#root .page-register .register-role-card:focus-visible{outline:3px solid #568fd6;outline-offset:5px;}
+#root .page-register .register-role-card[aria-pressed=true]{border-color:#397ad0;box-shadow:0 0 0 2px #397ad035;}
+#root .page-register .register-role-card>div:first-child>div{width:56px;height:56px;border-radius:16px;margin-bottom:22px;}
+#root .page-register .register-role-card h3{font-size:26px;line-height:1.55;margin:0 0 10px;color:#203d5c;}
+#root .page-register .register-role-card p{font-size:20px;line-height:1.85;color:#536b83;margin:0;}
+#root .page-register .register-role-card>div:last-child{display:flex;justify-content:space-between;gap:18px;align-items:center;font-size:20px;line-height:1.65;border-top:1px solid #d0deed;padding-top:22px;margin-top:0;color:#2562ab;}
+#root .page-register .register-role-card>div:last-child svg{width:22px;height:22px;flex-shrink:0;}
+#root .page-register .register-customer-form{margin-top:36px;padding-top:30px;border-color:#d3deeb;}
+#root .page-register .register-customer-form h4{font-size:25px;line-height:1.6;margin-bottom:24px;}
+#root .page-register .register-fields{gap:22px 26px;}
+#root .page-register .register-fields label{font-size:20px;margin-bottom:10px;line-height:1.7;}
+#root .page-register .register-fields :is(input,select){font-size:20px;min-height:56px;padding:13px 16px;}
+#root .page-register .register-customer-form>button{margin-top:28px;min-height:58px;font-size:20px;padding:14px 20px;}
+#root .page-register .register-signin{margin-top:32px;padding-top:26px;border-top:1px solid #d5e0ed;font-size:20px;line-height:1.8;color:#566d83;}
+#root .page-register .register-signin a{display:inline-block;margin-left:8px;}
+:root[data-theme=dark] #root .page-register .register-shell{background:linear-gradient(140deg,#1c3049f5,#14243af5);border-color:#3a526d;box-shadow:0 24px 70px #020b1840;}
+:root[data-theme=dark] #root .page-register .register-heading h2,:root[data-theme=dark] #root .page-register .register-role-card h3{color:#e3eefa;}
+:root[data-theme=dark] #root .page-register :is(.register-heading p,.register-role-card p,.register-signin){color:#b8cde3;}
+:root[data-theme=dark] #root .page-register .register-role-card{background:linear-gradient(145deg,#243e5d,#1d3049);border-color:#425f80;}
+:root[data-theme=dark] #root .page-register .register-role-card:nth-child(2){background:linear-gradient(145deg,#303c60,#252e48);border-color:#555d80;}
+:root[data-theme=dark] #root .page-register .register-role-card>div:last-child{color:#a8cdff;border-color:#49627f;}
+:root[data-theme=dark] #root .page-register .register-role-card:hover,:root[data-theme=dark] #root .page-register .register-role-card[aria-pressed=true]{border-color:#8bbaff;}
+:root[data-theme=dark] #root .page-register :is(.register-signin,.register-customer-form){border-color:#3e5671;}
+@media(max-width:720px){#root .app-content .page-register{padding:30px 16px 48px;}#root .page-register .register-shell{padding:28px 22px;border-radius:24px;}#root .page-register .register-heading{margin-bottom:26px;}#root .page-register .register-role-grid{grid-template-columns:1fr;gap:20px;}#root .page-register .register-role-card{padding:24px;gap:22px;}#root .page-register .register-role-card h3{font-size:24px;}#root .page-register .register-heading h2{font-size:30px;}#root .page-register .register-fields{grid-template-columns:1fr;}#root .page-register .register-fields>div{grid-column:auto;}}
+@media(prefers-reduced-motion:reduce){#root .page-register .register-role-card{transition:none;}#root .page-register .register-role-card:hover{transform:none;}}
+#root .page-register .registration-password{position:relative;}
+#root .page-register .registration-password input{padding-right:58px;margin:0;}
+#root .page-register .registration-eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:44px;height:44px;min-height:44px;padding:0;background:transparent;border:0;border-radius:9px;color:#526f92;box-shadow:none;}
+#root .page-register .registration-eye:hover{background:#e2ecfa;}
+#root .page-register .registration-eye:focus-visible{outline:3px solid #4a86d1;outline-offset:1px;}
+#root .page-register .register-customer-form>.registration-submit{width:auto;max-width:100%;min-height:48px;font-size:20px;padding:10px 24px;margin:26px auto 0;box-shadow:0 3px 10px #2458a322;}
+#root .page-register .registration-error{color:#b33040;font-size:20px;line-height:1.7;margin-top:18px;}
+:root[data-theme=dark] #root .page-register .registration-eye{color:#bfd5ed;}
+:root[data-theme=dark] #root .page-register .registration-eye:hover{background:#355170;}
+:root[data-theme=dark] #root .page-register .registration-error{color:#ffb9c3;}
+#root .page-register .register-fields input[aria-invalid=true]{border-color:#c04451;box-shadow:0 0 0 1px #c0445130;}
+#root .page-register .registration-field-error{font-size:18px;line-height:1.65;color:#b32e3d;margin:9px 0 0;}
+#root .page-register .signup-password-feedback{margin-top:16px;}
+#root .page-register .password-rules{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:7px;}
+#root .page-register .password-rules li{display:flex;align-items:flex-start;gap:9px;font-size:18px;line-height:1.6;}
+#root .page-register .rule-missing{color:#b32e3d;}
+#root .page-register .rule-met{color:#267247;}
+#root .page-register .password-strength{font-size:18px;line-height:1.7;}
+#root .page-register .password-strength-track{margin-top:9px;height:7px;border-radius:10px;background:#e2e8ef;overflow:hidden;}
+#root .page-register .password-strength-track>span{display:block;height:100%;border-radius:10px;transition:width .2s;}
+#root .page-register .strength-weak{color:#b32e3d;}#root .page-register .strength-weak .password-strength-track>span{width:33%;background:#c04451;}
+#root .page-register .strength-medium{color:#926018;}#root .page-register .strength-medium .password-strength-track>span{width:66%;background:#c48a29;}
+#root .page-register .strength-strong{color:#267247;}#root .page-register .strength-strong .password-strength-track>span{width:100%;background:#36875e;}
+:root[data-theme=dark] #root .page-register :is(.registration-field-error,.rule-missing,.strength-weak){color:#ffb7c1;}
+:root[data-theme=dark] #root .page-register :is(.rule-met,.strength-strong){color:#9cd9b6;}
+:root[data-theme=dark] #root .page-register .strength-medium{color:#f2ce8c;}
+:root[data-theme=dark] #root .page-register .password-strength-track{background:#3b5069;}
+:root[data-theme=dark] #root .page-register .register-fields input[aria-invalid=true]{border-color:#ed8b9b;}
+#root .page-register .rule-pending{color:#586f85;}
+:root[data-theme=dark] #root .page-register .rule-pending{color:#bdd0e5;}

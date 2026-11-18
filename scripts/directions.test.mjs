@@ -1,0 +1,16 @@
+﻿import assert from 'node:assert/strict';
+import { googleDirectionsUrl } from '../src/utils/googleDirections.js';
+const shop={shopName:'Shop & Repair',coordinates:{lat:28.64,lng:77.37}};
+const gps={kind:'gps',lat:28.67,lng:77.44};
+const url=new URL(googleDirectionsUrl(shop,gps));
+assert.equal(url.origin,'https://www.google.com');
+assert.equal(url.pathname,'/maps/dir/');
+assert.equal(url.searchParams.get('api'),'1');
+assert.equal(url.searchParams.get('origin'),'28.67,77.44');
+assert.equal(url.searchParams.get('destination'),'28.64,77.37');
+assert.equal(url.searchParams.get('travelmode'),'driving');
+assert.equal(new URL(googleDirectionsUrl(shop,{...gps,kind:'area'})).searchParams.has('origin'),false);
+assert.equal(new URL(googleDirectionsUrl(shop,null)).searchParams.has('origin'),false);
+assert.equal(new URL(googleDirectionsUrl({shopName:'Repair & Care',address:'Shop 1, Market'})).searchParams.get('destination'),'Repair & Care, Shop 1, Market');
+assert.equal(googleDirectionsUrl({}),null);
+console.log('Passed 10 Google Maps directions URL checks, including GPS origin and address fallback.');

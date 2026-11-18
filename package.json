@@ -1,0 +1,30 @@
+{
+  "name": "servicehub",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "payments:server": "node server/payments/server.mjs",
+    "test:payments": "node scripts/payment-gateway.test.mjs"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "1.2.2",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^0.460.0",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "react-test-renderer": "18.3.1",
+    "tailwindcss": "^3.4.15",
+    "vite": "^5.4.11"
+  }
+}

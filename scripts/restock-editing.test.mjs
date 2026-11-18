@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {changeRestock,linkedRestocks} from '../src/utils/restockEditing.js';
+import {takeBatches,allocateBillBatches} from '../src/utils/inventoryBatches.js';
+const part={id:'v1',stockQty:8,costPrice:20,sellingPrice:40,batches:[{id:'b1',qty:5,remaining:3,purchasePrice:10,date:'2026-01-01'},{id:'b2',qty:5,remaining:5,purchasePrice:20,date:'2026-01-02'}],history:[{id:'r1',type:'PURCHASE',qty:5,price:10,sellingPrice:30,at:'2026-01-01T10:00:00Z'},{id:'r2',type:'PURCHASE',qty:5,price:20,sellingPrice:40,at:'2026-01-02T11:00:00Z',batchId:'b2'}]};
+assert.equal(linkedRestocks(part).history[0].batchId,'b1');
+const input={qty:7,purchasePrice:12,sellingPrice:35,date:'2026-01-01',time:'16:00'};
+const edited=changeRestock(part,'r1',input);assert.equal(edited.success,true);assert.equal(edited.part.stockQty,10);assert.equal(edited.part.batches[0].remaining,5);assert.equal(edited.part.batches[0].purchasePrice,12);assert.equal(edited.part.sellingPrice,40,'Older batch edits do not change latest variant rate');assert.equal(part.stockQty,8,'Input unchanged');
+assert.equal(changeRestock(part,'r1',{...input,qty:1}).success,false,'Used quantity protected');assert.equal(changeRestock(part,'r1',{...input,purchasePrice:-1}).success,false);assert.equal(changeRestock(part,'r1',{...input,date:'2026-02-31'}).success,false);
+const removed=changeRestock(part,'r1',{}, {remove:true});assert.equal(removed.success,true);assert.equal(removed.part.stockQty,5);assert.ok(removed.part.history[0].deletedAt);assert.ok(removed.part.batches[0].deletedAt);assert.throws(()=>takeBatches(removed.part,6));
+const next=allocateBillBatches([removed.part],[{inventoryItemId:'v1',isInventoryPart:true,qty:1,rate:40}]);assert.equal(next.items[0].costTotal,20);assert.equal(next.items[0].batchAllocations[0].batchId,'b2');
+const returned=allocateBillBatches([removed.part],[],[{inventoryItemId:'v1',isInventoryPart:true,qty:2,batchAllocations:[{batchId:'b1',qty:2,purchasePrice:10}]}]);assert.equal(returned.stock[0].stockQty,5,'Deleted batches stay unavailable after historical bill returns');
+console.log('Passed restock edit/delete, legacy batch linking, used-stock floor, historical price protection, date validation, FIFO exclusion and immutable inputs.');

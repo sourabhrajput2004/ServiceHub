@@ -1,0 +1,8 @@
+﻿import assert from 'node:assert/strict';
+import React from 'react';
+import Renderer,{act} from 'react-test-renderer';
+import {MemoryRouter,useNavigate} from 'react-router-dom';
+import {createServer} from 'vite';
+const saved=new Map();globalThis.localStorage={getItem:k=>saved.get(k)||null,setItem:(k,v)=>saved.set(k,v),removeItem:k=>saved.delete(k)};
+const server=await createServer({server:{middlewareMode:true,hmr:false},appType:'custom',logLevel:'error'});let tree;
+try{const {AuthProvider,useAuth}=await server.ssrLoadModule('/src/context/AuthContext.jsx');let auth,nav;function Probe(){auth=useAuth();nav=useNavigate();return null;}act(()=>tree=Renderer.create(React.createElement(MemoryRouter,{future:{v7_startTransition:true,v7_relativeSplatPath:true}},React.createElement(AuthProvider,null,React.createElement(Probe)))));const owner={id:'owner',role:'shop_owner',email:'owner@test.in'},tech={id:'tech',role:'technician',email:'tech@test.in'};act(()=>auth.setUser(owner));act(()=>nav('/member-login'));assert.equal(auth.user,null);act(()=>{auth.setUser(tech);nav('/technician/jobs');});assert.equal(auth.user.id,'tech');act(()=>nav('/'));assert.equal(auth.user.id,'owner');assert.equal(JSON.parse(saved.get('servicehub_user')).id,'owner');assert.equal(JSON.parse(saved.get('servicehub_member_user')).id,'tech');act(()=>nav('/technician/jobs'));act(()=>auth.logout());assert.equal(auth.user,null);act(()=>nav('/'));assert.equal(auth.user.id,'owner');console.log('Passed separate public/member sessions, route switching, independent persistence and member logout.');}finally{act(()=>tree?.unmount());await server.close();}

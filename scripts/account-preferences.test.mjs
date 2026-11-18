@@ -1,0 +1,15 @@
+﻿import assert from 'node:assert/strict';
+import {validatePersonalDetails,validateContactChanges,paymentReference} from '../src/utils/accountPreferences.js';
+assert.ok(validatePersonalDetails({name:'   '}));assert.equal(validatePersonalDetails({name:'Sourabh'}),null);
+const current={phone:'9891234567',email:'old@test.in'};
+const request=validateContactChanges(current,'9876543210','NEW@test.in');
+assert.deepEqual(request.changes,{phone:'9876543210',email:'new@test.in'});
+assert.deepEqual(current,{phone:'9891234567',email:'old@test.in'});
+assert.ok(validateContactChanges(current,'12','new@test.in').error);
+assert.ok(validateContactChanges(current,current.phone,'bad email').error);
+assert.ok(validateContactChanges(current,current.phone,current.email).error);
+assert.deepEqual(paymentReference({type:'card',label:'My card',last4:'1234',cardNumber:'not-to-be-saved',cvv:'123'}).value,{type:'card',label:'My card',last4:'1234'});
+assert.ok(paymentReference({type:'card',label:'Card',last4:'1234567890123456'}).error);
+assert.deepEqual(paymentReference({type:'upi',label:'My UPI',upiId:'someone@upi'}).value,{type:'upi',label:'My UPI',upiId:'someone@upi'});
+assert.ok(paymentReference({type:'upi',label:'My UPI',upiId:'invalid'}).error);
+console.log('Passed 11 personal detail, pending contact-change and restricted payment-reference checks.');

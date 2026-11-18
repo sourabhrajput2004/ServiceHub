@@ -1,0 +1,93 @@
+﻿#root .shop-registration{max-width:1160px;width:100%;margin:0 auto;padding:34px 28px 76px;background:transparent;}
+#root .shop-registration .shop-registration-top{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:26px;flex-wrap:wrap;}
+#root .shop-registration-top .auth-switch-button{margin:0;font-size:18px;min-height:46px;}
+#root .shop-registration-top>p{font-size:18px;line-height:1.8;margin:0;color:#587087;}
+#root .shop-registration-top>p>a{display:inline-block;color:#3865a1;font-weight:700;margin-left:8px;}
+#root .shop-registration .shop-registration-hero{display:flex;align-items:flex-start;gap:24px;padding:38px 36px;margin-bottom:30px;border:1px solid #d0dceb;border-radius:26px;background:linear-gradient(120deg,#edf4ff,#f2f0fb);box-shadow:0 12px 35px #23456b0a;}
+#root .shop-registration .shop-hero-icon{width:68px;height:68px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid #c5d6eb;border-radius:20px;color:#3b679d;background:#dfeafb;}
+#root .shop-registration .shop-hero-eyebrow{font-size:16px;line-height:1.7;font-weight:750;letter-spacing:1.4px;color:#496995;margin:0 0 10px;}
+#root .shop-registration .shop-registration-hero h1{font-size:clamp(28px,2.6vw,36px);font-weight:800;line-height:1.5;letter-spacing:-.5px;text-wrap:balance;color:#213c5a;margin:0 0 14px;max-width:850px;}
+#root .shop-registration .shop-registration-hero p:last-child{font-size:20px;line-height:1.85;color:#536c83;margin:0;max-width:800px;}
+#root .shop-registration .shop-registration-form{display:grid;gap:24px;}
+#root .shop-registration .shop-form-section{border:1px solid #d1deec;border-radius:22px;background:linear-gradient(140deg,#fff,#f8fafd);box-shadow:0 6px 22px #23456708;overflow:hidden;}
+#root .shop-registration .shop-section-header{display:flex;gap:18px;align-items:flex-start;padding:26px 30px;border-bottom:1px solid #e1e8f0;background:#f4f7fc;}
+#root .shop-registration .shop-section-icon{display:flex;align-items:center;justify-content:center;width:50px;height:50px;background:#e4edf9;color:#416c9e;border:1px solid #d0ddef;border-radius:14px;flex-shrink:0;}
+#root .shop-registration .shop-section-header>div{flex:1;position:relative;min-width:0;padding-right:34px;}
+#root .shop-registration .shop-section-number{position:absolute;right:0;top:0;font-size:18px;color:#7c91a8;font-weight:700;font-variant-numeric:tabular-nums;}
+#root .shop-registration .shop-section-header h2{font-size:25px;font-weight:750;line-height:1.5;color:#233f5c;margin:0 0 6px;}
+#root .shop-registration .shop-section-header p{font-size:20px;line-height:1.8;color:#61748a;margin:0;}
+#root .shop-registration .shop-section-body{padding:30px;display:grid;gap:26px;}
+#root .shop-registration .shop-field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;align-items:start;}
+#root .shop-registration .shop-field{min-width:0;}
+#root .shop-registration .shop-field>label{display:block;font-size:20px;font-weight:650;line-height:1.7;color:#3a536e;margin-bottom:10px;}
+#root .shop-registration .shop-field>label>span{color:#5f7790;font-weight:500;}
+#root .shop-registration .shop-field input,#root .shop-registration .shop-location-picker textarea{display:block;width:100%;padding:13px 16px;min-height:56px;font-size:20px;line-height:1.6;border:1px solid #c7d6e7;border-radius:12px;background:#f8fbff;color:#223f5d;margin:0;box-shadow:0 1px 3px #284a6910 inset;}
+#root .shop-registration :is(input,textarea,button,a,summary):focus-visible{outline:3px solid #628fd0;outline-offset:3px;}
+#root .shop-registration :is(input,textarea)[aria-invalid=true]{border-color:#cb5361;box-shadow:0 0 0 1px #cb536130;}
+#root .shop-registration .shop-register-form .shop-field-error{font-size:18px;line-height:1.7;color:#b33143;margin:9px 0 0;}
+#root .shop-registration .shop-password-input{position:relative;}
+#root .shop-registration .shop-password-input input{padding-right:58px;}
+#root .shop-registration .shop-password-input>button{position:absolute;right:6px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:44px;height:44px;min-height:44px;border:0;background:transparent;box-shadow:none;color:#587695;padding:0;border-radius:9px;}
+#root .shop-registration .shop-password-input>button:hover{background:#e3ecf7;}
+#root .shop-registration .shop-password-feedback{margin-top:16px;}
+#root .shop-registration .shop-password-feedback ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:7px;}
+#root .shop-registration .shop-password-feedback li{display:flex;align-items:flex-start;gap:9px;font-size:18px;line-height:1.65;}
+#root .shop-registration .rule-pending{color:#63778e;}#root .shop-registration :is(.rule-missing,.strength-weak){color:#b33143;}#root .shop-registration :is(.rule-met,.strength-strong){color:#287348;}#root .shop-registration .strength-medium{color:#92601d;}
+#root .shop-registration .shop-strength{font-size:18px;line-height:1.75;}
+#root .shop-registration .shop-strength-track{height:7px;border-radius:8px;background:#e1e8ef;overflow:hidden;margin:9px 0 0;}
+#root .shop-registration .shop-strength-track span{display:block;height:100%;border-radius:8px;transition:width .2s;}
+#root .shop-registration .strength-weak .shop-strength-track span{width:33%;background:#ca5261;}#root .shop-registration .strength-medium .shop-strength-track span{width:66%;background:#b9842f;}#root .shop-registration .strength-strong .shop-strength-track span{width:100%;background:#33835b;}
+#root .shop-registration .shop-document-options{padding:0;border:0;min-width:0;}
+#root .shop-registration .shop-document-options legend{font-size:20px;font-weight:650;line-height:1.7;color:#3a536e;margin-bottom:16px;}
+#root .shop-registration .shop-document-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+#root .shop-registration .shop-register-form .shop-document-option{display:flex;gap:12px;align-items:flex-start;padding:18px;border:1px solid #d2deec;border-radius:14px;background:#f9fbfd;cursor:pointer;margin:0;font-size:20px;line-height:1.7;}
+#root .shop-registration .shop-document-option.selected{border-color:#5b8fc9;background:#edf4fe;}
+#root .shop-registration .shop-document-option input{width:22px;height:22px;min-height:22px;margin:5px 0 0;flex-shrink:0;accent-color:#426fa7;}
+#root .shop-registration .shop-document-option strong{display:block;font-size:20px;line-height:1.6;color:#2d4864;}
+#root .shop-registration .shop-document-option small{display:block;font-size:18px;line-height:1.7;color:#687c92;margin-top:6px;}
+#root .shop-registration .shop-optional-details{border:1px solid #d5dfec;border-radius:15px;padding:18px 20px;background:#f5f8fc;}
+#root .shop-registration .shop-optional-details summary{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:20px;font-weight:650;line-height:1.7;cursor:pointer;color:#375878;list-style:none;}
+#root .shop-registration .shop-optional-details summary::-webkit-details-marker{display:none;}
+#root .shop-registration .shop-optional-details[open] summary svg{transform:rotate(180deg);}
+#root .shop-registration .shop-optional-details>p{font-size:18px;line-height:1.85;color:#61758a;margin:18px 0 24px;}
+#root .shop-registration .shop-category-options{display:flex;flex-wrap:wrap;gap:12px;}
+#root .shop-registration .shop-category-options button{display:inline-flex;align-items:center;gap:9px;font-size:20px;line-height:1.7;padding:10px 16px;min-height:48px;border:1px solid #cbd9e9;border-radius:12px;background:#f1f5fa;color:#3e5873;}
+#root .shop-registration .shop-category-options button[aria-pressed=true]{background:#e4eefc;color:#2b5b9b;border-color:#7399ca;}
+#root .shop-registration .shop-registration-actions{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 30px;border:1px solid #cad9ec;border-radius:20px;background:#edf3fb;}
+#root .shop-registration .shop-registration-actions p{font-size:20px;line-height:1.8;color:#38536e;margin:0;}
+#root .shop-registration .shop-registration-actions p span{display:block;font-size:18px;color:#6c7e91;}
+#root .shop-registration .shop-registration-actions button,#root .shop-registration .shop-registration-success a{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-size:20px;font-weight:650;line-height:1.7;min-height:52px;padding:12px 22px;border-radius:12px;border:1px solid #315f9f;background:#315f9f;color:white;box-shadow:0 3px 0 #21436f;flex-shrink:0;}
+#root .shop-registration .shop-section-body #shop-liveKycImage{max-width:760px;width:100%;margin:auto;}
+#root .shop-registration .shop-registration-success{max-width:850px;margin:30px auto;padding:44px;border:1px solid #c9ded4;border-radius:24px;background:#f5fbf8;text-align:center;}
+#root .shop-registration .shop-registration-success>svg{color:#3b8963;margin:0 auto 22px;}
+#root .shop-registration .shop-registration-success h2{font-size:32px;font-weight:750;margin-bottom:18px;}
+#root .shop-registration .shop-registration-success p{font-size:20px;line-height:1.9;color:#506c60;}
+#root .shop-registration .shop-registration-success>div{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:26px;}
+#root .shop-registration .shop-registration-success a:last-child{background:transparent;border-color:#b7d0c3;color:#476955;box-shadow:none;}
+:root[data-theme=dark] #root .shop-registration .shop-registration-hero{background:linear-gradient(120deg,#213a58,#292e4c);border-color:#455a76;}
+:root[data-theme=dark] #root .shop-registration .shop-hero-icon{background:#2c496c;border-color:#4a6b92;color:#b9d7ff;}
+:root[data-theme=dark] #root .shop-registration .shop-registration-hero h1,:root[data-theme=dark] #root .shop-registration .shop-section-header h2{color:#e0ecfa;}
+:root[data-theme=dark] #root .shop-registration :is(.shop-registration-top>p,.shop-hero-eyebrow,.shop-registration-hero p:last-child,.shop-section-header p,.shop-optional-details>p,.shop-document-option small,.rule-pending){color:#b7cbe1;}
+:root[data-theme=dark] #root .shop-registration .shop-registration-top a{color:#b2d2ff;}
+:root[data-theme=dark] #root .shop-registration .shop-form-section{background:linear-gradient(145deg,#1d324c,#182b43);border-color:#405a78;}
+:root[data-theme=dark] #root .shop-registration .shop-section-header{background:#223a55;border-color:#3d546f;}
+:root[data-theme=dark] #root .shop-registration .shop-section-icon{background:#2c496a;color:#b6d2f8;border-color:#4b6585;}
+:root[data-theme=dark] #root .shop-registration :is(.shop-field>label,.shop-document-options legend,.shop-document-option strong,.shop-optional-details summary){color:#d0e0f3;}
+:root[data-theme=dark] #root .shop-registration .shop-field input,:root[data-theme=dark] #root .shop-registration .shop-location-picker textarea{background:#14263b;border-color:#476080;color:#dfebfa;}
+:root[data-theme=dark] #root .shop-registration .shop-document-option,:root[data-theme=dark] #root .shop-registration .shop-optional-details{background:#20364f;border-color:#445d7b;}
+:root[data-theme=dark] #root .shop-registration .shop-document-option.selected{background:#2a4668;border-color:#7ba2d4;}
+:root[data-theme=dark] #root .shop-registration .shop-register-form .shop-field-error,:root[data-theme=dark] #root .shop-registration :is(.rule-missing,.strength-weak){color:#ffb7c1;}
+:root[data-theme=dark] #root .shop-registration :is(.rule-met,.strength-strong){color:#9bdbb7;}
+:root[data-theme=dark] #root .shop-registration .strength-medium{color:#f1cc8b;}
+:root[data-theme=dark] #root .shop-registration .shop-password-input>button{color:#bcd2ed;}
+:root[data-theme=dark] #root .shop-registration .shop-password-input>button:hover{background:#304b6d;}
+:root[data-theme=dark] #root .shop-registration :is(input,textarea)[aria-invalid=true]{border-color:#e28d9b;}
+:root[data-theme=dark] #root .shop-registration .shop-category-options button{background:#263e59;color:#c1d5ec;border-color:#4a6381;}
+:root[data-theme=dark] #root .shop-registration .shop-category-options button[aria-pressed=true]{background:#304f74;color:#d5e6ff;border-color:#8ab0df;}
+:root[data-theme=dark] #root .shop-registration .shop-registration-actions{background:#213954;border-color:#496384;}
+:root[data-theme=dark] #root .shop-registration .shop-registration-actions p{color:#d1e1f5;}
+:root[data-theme=dark] #root .shop-registration .shop-registration-actions p span{color:#b0c6df;}
+:root[data-theme=dark] #root .shop-registration .shop-registration-success{background:#203d32;border-color:#4d715e;color:#d4ecdf;}
+:root[data-theme=dark] #root .shop-registration .shop-registration-success p,:root[data-theme=dark] #root .shop-registration .shop-registration-success a:last-child{color:#c2dece;}
+@media(max-width:760px){#root .shop-registration{padding:26px 16px 48px;}#root .shop-registration .shop-registration-top{align-items:flex-start;flex-direction:column;gap:16px;}#root .shop-registration .shop-registration-hero{padding:26px 22px;gap:18px;flex-direction:column;}#root .shop-registration .shop-hero-icon{width:56px;height:56px;border-radius:16px;}#root .shop-registration .shop-registration-hero h1{font-size:29px;}#root .shop-registration .shop-section-header{padding:22px 20px;gap:14px;}#root .shop-registration .shop-section-header h2{font-size:23px;}#root .shop-registration .shop-section-body{padding:24px 20px;}#root .shop-registration .shop-field-grid,#root .shop-registration .shop-document-grid{grid-template-columns:1fr;}#root .shop-registration .shop-registration-actions{align-items:stretch;flex-direction:column;padding:24px 20px;}#root .shop-registration .shop-registration-success{padding:30px 22px;}#root .shop-registration .shop-registration-success a{width:100%;}}
+@media(prefers-reduced-motion:reduce){#root .shop-registration .shop-strength-track span{transition:none;}}

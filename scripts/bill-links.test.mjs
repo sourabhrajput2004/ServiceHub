@@ -1,0 +1,36 @@
+import assert from 'node:assert/strict';
+import {once} from 'node:events';
+import {mkdtempSync,rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join,resolve} from 'node:path';
+import {DatabaseSync} from 'node:sqlite';
+import {createPaymentServer} from '../server/payments/server.mjs';
+import {createBillDocuments} from '../server/payments/billDocuments.mjs';
+import {createPublicBillServer} from '../server/payments/publicBills.mjs';
+import {customerInvoicePdf} from '../src/utils/customerInvoicePdf.js';
+const temp=mkdtempSync(join(tmpdir(),'servicehub-bill-links-')),database=join(temp,'bills.sqlite');let server,publicServer;
+try{
+ const fixture={id:'INV-0001',bookingId:'BK-1',date:'2026-11-13',customerName:'Customer',customerPhone:'9876543210',items:[{name:'Screen Repair',qty:1,rate:250},{name:'Screen',qty:1,rate:2400,isInventoryPart:true}],grandTotal:2650,paymentStatus:'Fully Paid'};
+ const first=await customerInvoicePdf(fixture,{shopName:'Shop'}),pdf=Buffer.from(await first.blob.arrayBuffer());
+ const second=await customerInvoicePdf(fixture,{shopName:'Shop'});assert.deepEqual(Buffer.from(await second.blob.arrayBuffer()),pdf,'The same bill generates stable PDF bytes');
+ const app=createPaymentServer({database,appUrl:'http://localhost:3000',operatorPassword:'bill-test-password',shopId:'shop_1'});server=app.server;server.listen(0,'127.0.0.1');await once(server,'listening');const base='http://127.0.0.1:'+server.address().port;
+ let cookie='';const post=(path,body,auth=true)=>fetch(base+'/api/payments'+path,{method:'POST',headers:{'Content-Type':'application/json',Origin:'http://localhost:3000',...(auth&&cookie?{Cookie:cookie}:{})},body:JSON.stringify(body)});
+ const body={invoiceId:fixture.id,pdf:pdf.toString('base64')};assert.equal((await post('/bills',body)).status,401);
+ const login=await post('/operator/login',{password:'bill-test-password'});cookie=login.headers.get('set-cookie').split(';')[0];
+ const made=await post('/bills',body);assert.equal(made.status,200);const record=await made.json();assert.match(record.token,/^[a-f0-9]{64}$/);assert.ok(record.url.endsWith(record.token+'.pdf'));assert.ok(!record.url.includes(fixture.customerPhone));
+ const again=await (await post('/bills',body)).json();assert.equal(again.url,record.url,'Repeated sharing keeps the same PDF link');
+ const publicPath=new URL(record.url).pathname,view=await fetch(base+publicPath);assert.equal(view.status,200);assert.equal(view.headers.get('content-type'),'application/pdf');assert.match(view.headers.get('content-disposition'),/^inline/);assert.deepEqual(Buffer.from(await view.arrayBuffer()),pdf);
+ const download=await fetch(base+publicPath+'?download=1');assert.match(download.headers.get('content-disposition'),/^attachment/);
+ publicServer=createPublicBillServer(database);publicServer.listen(0,'127.0.0.1');await once(publicServer,'listening');const publicBase='http://127.0.0.1:'+publicServer.address().port;
+ const publicDownload=await fetch(publicBase+publicPath+'?download=1');assert.equal(publicDownload.status,200);assert.deepEqual(Buffer.from(await publicDownload.arrayBuffer()),pdf);
+ for(const route of ['/','/api/payments/config','/api/payments/intents','/.env','/.data/payments.sqlite'])assert.equal((await fetch(publicBase+route)).status,404,'Public bill server must not expose '+route);
+ assert.equal((await fetch(publicBase+'/api/payments/operator/login',{method:'POST'})).status,404);
+ await new Promise(resolve=>publicServer.close(resolve));publicServer=null;
+ assert.equal((await fetch(base+'/api/payments/bills/'+'f'.repeat(64)+'.pdf')).status,404);
+ assert.equal((await post('/bills',{invoiceId:'../unsafe',pdf:body.pdf})).status,400);assert.equal((await post('/bills',{invoiceId:'BAD',pdf:Buffer.from('not a PDF').toString('base64')})).status,400);
+ const different=app.service.session('shop_other');const oldCookie=cookie;cookie='sh_payment_session='+different;const other=await (await post('/bills',body)).json();assert.notEqual(other.token,record.token);cookie=oldCookie;
+ await new Promise(resolve=>server.close(resolve));server=null;
+ const db=new DatabaseSync(database),documents=createBillDocuments(db);assert.deepEqual(documents.read(record.token).pdf,pdf,'Bill survives backend restart');
+ db.prepare('UPDATE bill_documents SET expires_at=0 WHERE token=?').run(record.token);assert.throws(()=>documents.read(record.token),/expired/);db.close();
+ console.log('Passed authenticated bill publication, stable private URLs, anonymous PDF view/download, validation, shop isolation, expiry and persistence.');
+}finally{if(publicServer)await new Promise(resolve=>publicServer.close(resolve));if(server)await new Promise(resolve=>server.close(resolve));assert.ok(resolve(temp).startsWith(resolve(tmpdir()))&&temp.includes('servicehub-bill-links-'));rmSync(temp,{recursive:true,force:true});}

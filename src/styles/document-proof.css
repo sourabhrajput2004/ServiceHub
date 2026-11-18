@@ -1,0 +1,41 @@
+﻿.document-proof {margin-top:22px;border:1px solid #bdd9cf;border-radius:14px;background:linear-gradient(135deg,#eef8f3,#e8f1f7);overflow:hidden;}
+.document-proof summary {display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:16px;cursor:pointer;list-style:none;}
+.document-proof summary::-webkit-details-marker {display:none;}
+.document-proof summary:focus-visible {outline:3px solid #5484d1;outline-offset:-4px;border-radius:12px;}
+.proof-badge,.proof-expand {display:inline-flex;align-items:center;gap:10px;}
+.proof-badge {color:#1c624d;font-size:20px;font-weight:700;flex-wrap:wrap;}
+.proof-expand {font-size:20px;color:#365675;}
+.proof-expand svg {transition:transform .2s;}
+.document-proof[open] .proof-expand svg {transform:rotate(180deg);}
+.proof-demo {display:inline-block;border:1px solid #b4cadf;border-radius:6px;padding:1px 8px;background:#e4edf7;font-size:20px;font-weight:500;color:#365675;}
+.proof-body {border-top:1px solid #c8ddda;padding:20px;background:#ffffffb0;}
+.proof-body h4 {display:flex;align-items:center;gap:10px;font-size:22px;font-weight:700;color:#203c59;margin-bottom:18px;}
+.proof-body dl {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+.proof-body dt {font-size:20px;color:#526176;margin-bottom:5px;}
+.proof-body dd {font-size:20px;color:#233952;font-weight:600;overflow-wrap:anywhere;}
+.app-content .proof-body .proof-note {font-size:20px;color:#526176;border-top:1px solid #cfdeea;margin-top:20px;padding-top:16px;line-height:1.75;}
+.document-proof.proof-expired,.document-proof.proof-pending {background:linear-gradient(135deg,#fff6e8,#f5f0e8);border-color:#e0cba4;}
+.proof-expired .proof-badge,.proof-pending .proof-badge {color:#80551c;}
+:root[data-theme=dark] .document-proof {background:linear-gradient(135deg,#1c3d37,#20384c);border-color:#3e6a5e;}
+:root[data-theme=dark] .document-proof .proof-badge {color:#9ee2c8;}
+:root[data-theme=dark] .document-proof .proof-expand {color:#bfdaff;}
+:root[data-theme=dark] .document-proof .proof-demo {background:#294663;border-color:#4e6b8e;color:#cfdef1;}
+:root[data-theme=dark] .document-proof .proof-body {background:#192b40;border-color:#3d5a6c;}
+:root[data-theme=dark] .document-proof :is(h4,dd) {color:#e1edf9;}
+:root[data-theme=dark] .document-proof :is(dt,.proof-note) {color:#b8cce3;}
+:root[data-theme=dark] .app-content .document-proof .proof-note {color:#b8cce3;border-color:#3b506c;}
+:root[data-theme=dark] .document-proof:is(.proof-expired,.proof-pending) {background:linear-gradient(135deg,#423727,#30313a);border-color:#7b6645;}
+:root[data-theme=dark] .document-proof:is(.proof-expired,.proof-pending) .proof-badge {color:#f0ce98;}
+@media(max-width:700px){.proof-body dl{grid-template-columns:1fr;}.document-proof summary{align-items:flex-start;}.proof-expand{margin-left:auto;}.proof-body{padding:16px;}}
+@media(prefers-reduced-motion:reduce){.proof-expand svg{transition:none;}}
+#root .document-proof .proof-trigger{display:flex;width:100%;align-items:center;justify-content:space-between;gap:18px;padding:14px 16px;background:transparent;border:0;border-radius:12px;text-align:left;cursor:pointer;color:inherit;}
+#root .document-proof.proof-compact{margin:0;background:#f2faf5;border-radius:9px;}
+#root .document-proof.proof-compact .proof-trigger{padding:6px 9px;gap:7px;}
+#root .document-proof.proof-compact .proof-badge{font-size:16px;gap:6px;}
+#root .document-proof .proof-trigger:focus-visible{outline:3px solid #568bc9;outline-offset:3px;}
+#root .document-proof.proof-rejected{background:#fff0f1;border-color:#e6b8c0;}
+#root .document-proof.proof-rejected .proof-badge{color:#b83c50;}
+.sv-modal .proof-body{background:transparent;padding:6px 0;border:0;}.sv-modal .proof-body dl{display:grid;grid-template-columns:1fr 1fr;gap:20px;}.sv-modal .proof-body dt{font-size:18px;color:var(--sv-muted);}.sv-modal .proof-body dd{font-size:20px;color:var(--sv-text);overflow-wrap:anywhere;}.sv-modal .proof-body h4{font-size:24px;}.sv-modal .proof-note{font-size:18px;line-height:1.8;margin:24px 0 0;color:var(--sv-muted);}
+:root[data-theme=dark] #root .document-proof.proof-compact{background:#203e34;}
+:root[data-theme=dark] #root .document-proof.proof-rejected{background:#492c34;border-color:#86515d;}
+@media(max-width:600px){.sv-modal .proof-body dl{grid-template-columns:1fr;}}

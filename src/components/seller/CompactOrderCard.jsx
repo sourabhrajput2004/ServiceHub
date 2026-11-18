@@ -1,0 +1,26 @@
+import {bookingCustomerEmail} from '../../utils/bookingCustomerEmail';
+import {useShop} from '../../context/ShopContext';
+import {useWorkforce} from '../../context/WorkforceContext';
+import {cancelledInvoice} from '../../utils/invoiceLifecycle';
+import React,{useState} from 'react';
+import {Link} from 'react-router-dom';
+import {Eye, Phone, UserRound, Receipt} from 'lucide-react';
+import {useLanguage} from '../../context/LanguageContext';
+import {serviceMode,repairDirections} from '../../utils/repairService';
+import {workflowStage} from '../../utils/repairWorkflow';
+import {workStatus} from '../../utils/orderFulfilment';
+import OwnerJobWorkflow from './OwnerJobWorkflow';
+import JobAssignment from './JobAssignment';
+import AddRepairButton from './AddRepairButton';
+import RepairPayment from './RepairPayment';
+import RepairStatusTimeline from '../common/RepairStatusTimeline';
+import {WorkUpdates} from './TechnicianWork';
+import {BusinessDialog} from './ServiceWorkspace';
+import '../../styles/compact-order-card.css';
+export default function CompactOrderCard({job:booking,shop:providedShop,invoice:providedInvoice,onInvoice}){
+ const live=useShop(),workforce=useWorkforce(),job=live.bookings.find(j=>j.id===booking.id)||booking,shop=live.shops.find(s=>s.id===job.shopId)||providedShop,invoice=live.invoices.find(i=>i.bookingId===job.id&&!cancelledInvoice(i))||providedInvoice;
+ const [details,setDetails]=useState(false),{tr,language}=useLanguage(),t=(a,b)=>language==='hi'?b:a,stage=workflowStage(job),home=serviceMode(job)==='home',technician=job.assignedToOwner?(shop?.ownerName||tr('Owner')):job.assignedTechId?(workforce.members.find(m=>m.id===job.assignedTechId)?.name||job.assignedTechName||tr('Assigned technician')):tr('Not assigned');
+ const formattedDate=value=>{if(!value)return '';const d=new Date(value);return Number.isNaN(d.getTime())?value:d.toLocaleString(language==='hi'?'hi-IN':'en-IN',{day:'2-digit',month:'short',year:'numeric',...(String(value).includes('T')?{hour:'2-digit',minute:'2-digit'}:{}),timeZone:'Asia/Kolkata'});};
+ const fields=[['Order ID',job.id],['Customer name',job.customerName],['Phone',job.customerPhone],['Email',bookingCustomerEmail(job)],['WhatsApp number',job.whatsappNumber],['Device type',job.deviceType],['Brand',job.brand||job.deviceBrand],['Model',job.model],['Service',job.issueType],['Problem details',job.description||job.issueDescription],['Service mode',home?'Service at Home':'Service at Shop'],['Customer address',job.customerAddress||job.address],['Booking date',formattedDate(job.createdAt||job.bookingDate)],...((job.scheduledDate||job.preferredDate)?[['Scheduled date',formattedDate(job.scheduledDate||job.preferredDate)]]:[]),...(job.startTime?[['Appointment time',job.startTime]]:[]),['Technician',technician],['Repair status',workStatus(job)],['Payment status',job.isPaid?'Paid':'Not paid'],...(job.isPaid?[['Payment mode',job.paymentMethod==='Cash'?'Cash':'Online'],['Payment details',job.paymentMethod==='Cash'?'Cash collected by '+((job.cashCollectedByRole||job.paymentRecordedByRole)==='technician'?'technician':'shop team')+' ('+(job.cashCollectedBy||job.paymentRecordedByName||technician)+')':'Online payment by customer']]:[]),['Booked by',job.createdByName],...(job.serialNumber?[['Serial number',job.serialNumber]]:[])];
+ return <article className={'compact-order-card coc-'+stage}><header><span className="coc-id">{job.id}</span><span className="coc-status">{tr(workStatus(job))}</span></header><h3>{job.customerName}</h3><div className="coc-phone"><Phone size={15}/>{job.customerPhone||tr('Not provided')}</div><p className="coc-device">{job.deviceBrand||[job.brand,job.model].filter(Boolean).join(' ')} {job.deviceType&&' · '+tr(job.deviceType)}</p><div className="coc-facts"><div className="coc-problem"><span>{t('Problem','परेशानी')}</span><strong>{job.issueType}</strong><p>{job.description||job.issueDescription}</p></div><div><span>{t('Technician','टेक्नीशियन')}</span><strong><UserRound size={15}/>{technician}</strong></div><div><span>{t('Service mode','सर्विस का तरीका')}</span><strong>{tr(home?'Service at Home':'Service at Shop')}</strong></div></div><div className="coc-actions"><button type="button" className="coc-view" onClick={()=>setDetails(true)}><Eye size={16}/>{t('View Details','पूरी जानकारी')}</button>{!['cancelled','completed','unpaid_closed'].includes(stage)&&<AddRepairButton shop={shop} booking={job}/>}<JobAssignment job={job}/><OwnerJobWorkflow compact job={job} invoice={invoice}/>{invoice?<button type="button" onClick={()=>onInvoice(invoice)}><Receipt size={16}/>{tr('View Invoice')}</button>:stage==='completed'&&<Link to={'/shop/billing/new?job='+encodeURIComponent(job.id)}><Receipt size={16}/>{t('Create Bill','बिल बनाएँ')}</Link>}</div>{details&&<BusinessDialog title={job.id+' · '+t('Booking details','बुकिंग की जानकारी')} className="coc-dialog" onClose={()=>setDetails(false)}><dl className="coc-detail-list">{fields.map(([label,value])=><div key={label}><dt>{tr(label)}</dt><dd>{value||tr('Not provided')}</dd></div>)}</dl>{home&&<a className="coc-map" href={repairDirections(job,shop)} target="_blank" rel="noreferrer">{t('Open booking location','बुकिंग की लोकेशन देखें')}</a>}<RepairStatusTimeline job={job} invoice={invoice} owner/><RepairPayment job={job}/><WorkUpdates job={job} review/></BusinessDialog>}</article>;
+}

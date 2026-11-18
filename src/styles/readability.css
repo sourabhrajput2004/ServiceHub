@@ -1,0 +1,162 @@
+/* Shared reading sizes; layout follows the text instead of shrinking it. */
+body { font-size:1.125rem; line-height:1.7; }
+button, input, select, textarea { font:inherit; }
+input::placeholder, textarea::placeholder { color:#64748b; opacity:1; }
+:where(main) :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea) { min-height:48px; }
+:where(main) :is(button,a) { overflow-wrap:break-word; }
+:where(main) :is(button[type=submit],button[aria-label='Send message']) { min-height:48px; }
+:where(main) .bg-white .text-slate-400 { color:#64748b; }
+:where(main) :is(h1,h2,h3,p,label,button) { overflow-wrap:break-word; }
+:where(main) :is(.leading-none,.leading-tight) { line-height:1.45; }
+:where(main) table { min-width:900px; }
+:where(main) th,:where(main) td { padding-top:16px; padding-bottom:16px; }
+.language-switch { padding:9px 12px; }
+.language-switch select { max-width:110px; min-height:28px; font-size:20px; }
+.service-navbar>div>a>div>div:first-child { font-size:24px; }
+.service-navbar>div>a>div>div:nth-child(2) { font-size:20px; letter-spacing:.3px; }
+.service-navbar>div>div { flex-wrap:wrap; }
+.service-navbar .public-nav-link { white-space:nowrap; }
+.public-mobile-nav { flex-wrap:wrap; overflow:visible; gap:12px 24px; padding-top:8px; padding-bottom:8px; }
+.public-mobile-nav a { font-size:20px; padding:8px 0; }
+.language-switch-mobile { margin:0; }
+.language-switch-mobile select { max-width:100px; font-size:20px; }
+.marketing { --muted:#52636f; }
+.marketing .eyebrow { font-size:20px; letter-spacing:.7px; }
+.marketing p { font-size:20px; line-height:1.85; }
+.marketing .marketing-button { min-height:52px; font-size:20px; white-space:normal; line-height:1.5; }
+.marketing .text-link { font-size:20px; line-height:1.6; }
+.hero-copy>p { max-width:540px; font-size:20px; }
+.hero-layout { grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:48px; }
+.repair-finder { max-width:none; padding:24px; }
+.marketing .finder-label { font-size:20px; letter-spacing:.5px; }
+.device-switch { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.device-switch button { min-height:48px; font-size:20px; gap:10px; padding:10px; }
+.device-switch svg { width:20px; height:20px; flex-shrink:0; }
+.finder-bottom { flex-direction:column; align-items:stretch; gap:16px; }
+.location-select select { max-width:none; font-size:20px; }
+.field-caption { font-size:20px; color:#52675a; letter-spacing:.3px; }
+.hero-reassurance { flex-wrap:wrap; gap:12px 22px; }
+.hero-reassurance span { font-size:20px; }
+.hero-visual { min-height:740px; transform:none; }
+.visual-caption { font-size:20px; letter-spacing:.7px; white-space:normal; width:100%; text-align:center; color:#52675a; }
+.device-art { margin-top:70px; }
+.screen-brand { font-size:20px; }.screen-device { font-size:20px; text-align:center; }.screen-caption {font-size:20px;text-align:center;}
+.device-screen { padding-top:32px; }.screen-icon {margin:15px 0;padding:13px;}.screen-check {margin-top:12px;}
+.floating-check { top:180px; left:-10px; max-width:280px; transform:none; }.floating-check strong {font-size:20px;}.floating-check small {font-size:20px;color:#52675a;}
+.repair-preview { top:380px; width:min(420px,100%); padding:24px; transform:none; }
+.preview-header {align-items:flex-start;}.preview-header strong{font-size:20px;}.preview-header small{font-size:20px;color:#5b6a74;line-height:1.6;}.preview-icon{flex-shrink:0;}.preview-dot{flex-shrink:0;margin-top:8px;}
+.preview-status>span{font-size:20px;}.preview-status strong{font-size:24px;}.preview-status strong small{font-size:20px;color:#5b6a74;}
+.preview-track button {min-height:60px;color:#5b6a74;}.preview-track small{font-size:20px;}.preview-track button>span{width:28px;height:28px;font-size:20px;}.preview-track button:before{top:13px;}.preview-track svg{width:18px;height:18px;}
+.marketing .repair-preview>p {font-size:20px;color:#52675a;}.visual-footnote{font-size:20px;letter-spacing:.5px;bottom:0;color:#52675a;}
+.benefits-ribbon>.marketing-wrap {flex-wrap:wrap;gap:20px 30px;}.benefits-ribbon span{font-size:20px;flex:1;min-width:220px;}.benefits-ribbon small{font-size:20px;color:#52675a;}
+.service-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}.service-tile{min-height:280px;}.service-tile h3{font-size:22px;}.marketing .service-tile p{font-size:20px;}.service-number{font-size:20px;opacity:1;}
+.how-layout{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:65px;}.how-layout>div>p{max-width:450px;font-size:20px;}.how-step h3{font-size:22px;}.marketing .how-step p{font-size:20px;}.how-number{font-size:20px;color:#52675a;}
+.owner-banner{flex-wrap:wrap;}.owner-banner .eyebrow{font-size:20px;}.owner-banner h2{font-size:30px;}.marketing .owner-banner p{font-size:20px;}.marketing .local-note{font-size:20px;flex-wrap:wrap;color:#52675a;}
+.marketing .about-manifesto p,.principle-grid p,.audience-panel p{font-size:20px;}.manifesto-location{font-size:20px;letter-spacing:.3px;}.audience-tabs button{font-size:20px;min-height:52px;}.audience-panel li{font-size:20px;align-items:flex-start;}.audience-panel li svg{margin-top:3px;}.principle-grid h3{font-size:22px;}.principle-grid{gap:30px;}
+.contact-layout{gap:60px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);}.contact-copy>p{max-width:none;}.contact-method small{font-size:20px;letter-spacing:.4px;color:#52675a;}.contact-method a,.marketing .contact-method p{font-size:20px;}.contact-method a{overflow-wrap:anywhere;}.repair-help-note h3{font-size:20px;}.repair-help-note p{font-size:20px;}
+.form-kicker{font-size:20px;letter-spacing:.4px;color:#52675a;}.contact-form-card h2{font-size:30px;}.marketing .form-intro,.form-fields label{font-size:20px;}.form-fields{gap:24px;}.form-fields :is(input,select,textarea){font-size:20px;padding:14px;}.marketing .contact-form-note{font-size:20px;}.contact-success p{font-size:20px;}.faq-item h3 button{font-size:20px;line-height:1.6;min-height:64px;}.faq-item p{font-size:20px;}
+html[lang=hi] .device-switch button {font-size:20px;line-height:1.6;}
+@media(min-width:768px) and (max-width:1535px){.public-mobile-nav a{font-size:20px;}.public-mobile-nav{gap:12px 28px;}}
+@media(max-width:1023px){.hero-layout{grid-template-columns:1fr;gap:35px;}.hero-copy{max-width:650px;margin:auto;width:100%;}.hero-visual{max-width:520px;width:100%;margin:0 auto;min-height:750px;transform:none;}.floating-check{left:0;}.repair-preview{right:0;}.about-hero,.contact-layout{gap:35px;}.principle-grid{grid-template-columns:1fr;}.how-layout{gap:35px;}.owner-banner .marketing-button{margin-left:0;}}
+@media(max-width:767px){.service-navbar>div{align-items:center;}.service-navbar>div>a>div>div:first-child{font-size:22px;}.service-navbar>div>div{gap:10px;}.service-navbar>div>div>div{flex-wrap:wrap;}.service-navbar>div{height:auto;}.public-mobile-nav{gap:8px 20px;padding:10px 18px;}.public-mobile-nav .public-mobile-action{margin-left:0;}.language-switch-mobile svg{width:18px;height:18px;}.hero-visual{min-height:790px;transform:none;margin-top:15px;}.visual-orbit{width:100%;max-width:360px;}.orbit-two{max-width:280px;}.floating-check{top:190px;max-width:260px;}.repair-preview{top:405px;width:100%;padding:20px;}.visual-footnote{bottom:4px;text-align:center;}.service-grid{grid-template-columns:1fr;}.service-tile{min-height:260px;}.service-icon{margin:15px 0;}.section-heading{flex-direction:column;align-items:flex-start;}.section-heading .text-link{font-size:20px;white-space:normal;}.benefits-ribbon>.marketing-wrap{flex-direction:column;}.benefits-ribbon span{font-size:20px;}.how-layout,.about-hero,.contact-layout{grid-template-columns:1fr;}.how-step{gap:16px;}.how-step>svg{display:none;}.audience-panel{grid-template-columns:1fr;gap:15px;}.audience-tabs{display:flex;}.audience-tabs button{flex:1;white-space:normal;}.about-contact{flex-wrap:wrap;}.faq-section{grid-template-columns:1fr;gap:24px;}.contact-form-card{padding:22px;}.marketing .local-note{font-size:20px;text-align:center;}.marketing .hero-copy>p{font-size:20px;}.owner-banner h2{font-size:28px;}}
+@media(max-width:380px){.hero-visual{width:100%;margin-left:0;transform:none;}.repair-preview{right:0;padding:16px;}.preview-track small{font-size:20px;}.floating-check{left:0;}.marketing h1{font-size:42px;}.marketing .marketing-button{width:100%;}.hero-reassurance span{font-size:20px;}.contact-method{gap:10px;}.contact-method>span{padding:9px;}}
+/* Let translated preview text and larger modal content grow naturally. */
+.marketing .hero-visual { min-height:0; flex-direction:column; align-items:center; padding-bottom:75px; }
+.marketing .device-art { position:absolute; top:20px; width:215px; height:365px; }
+.marketing .device-camera { left:72px; }
+.marketing .repair-preview { position:relative; top:auto; right:auto; margin-top:440px; }
+main .fixed.inset-0.flex { overflow-y:auto; align-items:flex-start; padding-top:24px; padding-bottom:24px; }
+main .fixed.inset-0.flex>div { margin-top:auto; margin-bottom:auto; flex-shrink:0; }
+@media(max-width:480px){main .fixed.inset-0 .grid-cols-2{grid-template-columns:minmax(0,1fr);} .marketing .hero-visual{margin-left:0;width:100%;}.marketing .preview-header{gap:8px;}.marketing .preview-status{gap:12px;}.marketing .visual-footnote{width:100%;justify-content:center;}}
+
+/* Give the central navigation its own readable size in both languages. */
+.service-navbar .desktop-main-nav { font-size:22px; line-height:1.5; gap:32px; }
+.service-navbar .desktop-main-nav>a { font-size:inherit; font-weight:700; padding-top:18px; padding-bottom:18px; }
+.service-navbar .desktop-main-nav svg { width:21px; height:21px; flex-shrink:0; }
+.service-navbar .desktop-main-nav .public-nav-link[aria-current=page]:after { height:3px; bottom:9px; }
+
+/* Footer content should be as easy to read as the main navigation. */
+.service-footer { font-size:20px; line-height:1.8; color:#334155; }
+.service-footer h2 { font-size:21px; line-height:1.5; font-weight:750; letter-spacing:.6px; }
+.service-footer p,.service-footer li,.service-footer a,.service-footer span { line-height:1.8; }
+.service-footer li>a { display:inline-block; font-size:20px; font-weight:500; min-height:40px; padding:4px 0; }
+.service-footer p,.service-footer span { font-size:20px; }
+.service-footer .border-t p { font-size:20px; color:#475569; }
+.service-footer a:focus-visible { outline:3px solid #315bea; outline-offset:5px; border-radius:4px; }
+.service-footer svg { flex-shrink:0; }
+.service-footer a.font-extrabold,.service-footer a.font-extrabold span { font-size:30px; font-weight:800; }
+@media(max-width:767px){ .service-footer h2{font-size:20px;}.service-footer p,.service-footer span,.service-footer li>a{font-size:20px;}.service-footer .border-t p{font-size:20px;}.service-footer a.font-extrabold,.service-footer a.font-extrabold span{font-size:28px;}}
+/* One reading scale for every route, form, dashboard and dialog. */
+body { font-size:20px; line-height:1.75; }
+.app-content { font-size:20px; }
+.app-content :is(p,label,li,dt,dd,th,td,input,select,textarea,button) { font-size:20px; line-height:1.7; }
+.app-content :is(input,select,textarea) { font-size:20px; }
+.app-content :is(.text-xs,.text-sm,.text-base) { font-size:20px; line-height:1.7; }
+.app-content :is(h3,.text-lg) { font-size:22px; line-height:1.5; }
+.app-content h2 { font-size:30px; line-height:1.45; }
+.app-content :is(button,input,select) { min-height:48px; }
+.app-content input:is([type=checkbox],[type=radio]) { min-height:0; }
+.app-content .text-slate-500 { color:#475569; }
+.app-content .bg-white .text-slate-400 { color:#526176; }
+.app-content .marketing .eyebrow { font-size:20px; letter-spacing:.3px; }
+.app-content .marketing :is(.marketing-button,.text-link) { font-size:20px; }
+.app-content .marketing :is(.device-switch button,.hero-reassurance span) { font-size:20px; }
+.app-content .marketing .preview-track button { min-height:75px; }
+.app-content .marketing .preview-track button>span { min-width:30px; min-height:30px; }
+.app-content .marketing .preview-track button:before { top:15px; }
+.app-content .marketing .preview-track small { font-size:20px; }
+.app-content .marketing .device-art { width:240px; height:420px; }
+.app-content .marketing .device-camera { left:85px; }
+.app-content .marketing .repair-preview { margin-top:490px; }
+.app-content .marketing .screen-device { font-size:22px; }
+.app-content .marketing .screen-icon { margin-top:20px; }
+.app-content .marketing .owner-banner h2 { font-size:30px; }
+.app-content .shop-cover { display:flex; flex-wrap:wrap; align-items:center; gap:12px; padding-bottom:16px; }
+.app-content .shop-cover>img { flex-basis:100%; }
+.app-content .shop-verification { margin-left:16px; }
+.app-content .shop-rating { margin-left:16px; margin-right:16px; }
+/* Account controls always occupy the right-hand area, independently of navigation. */
+.service-navbar .navbar-shell { width:100%; max-width:1920px; margin:0 auto; padding:18px 32px 8px; display:grid; grid-template-columns:minmax(0,1fr) auto; grid-template-areas:'brand actions' 'nav nav'; align-items:center; gap:14px 24px; }
+.service-navbar .navbar-brand { grid-area:brand; justify-self:start; }
+.service-navbar .navbar-actions { grid-area:actions; justify-self:end; display:flex; justify-content:flex-end; align-items:center; gap:14px; flex-wrap:nowrap; margin-left:auto; }
+.service-navbar .navbar-actions>div { display:flex; align-items:center; gap:12px; flex-wrap:nowrap; }
+.service-navbar .navbar-actions :is(button,a,select) { font-size:20px; line-height:1.5; }
+.service-navbar .navbar-actions button { min-height:48px; }
+.service-navbar .navbar-actions .language-switch { flex-shrink:0; }
+.service-navbar .navbar-actions .language-switch select { max-width:130px; }
+.service-navbar .desktop-main-nav { grid-area:nav; display:flex; justify-content:center; flex-wrap:wrap; font-size:22px; gap:12px 32px; min-width:0; }
+.service-navbar .desktop-main-nav>a { font-size:22px; padding-top:10px; padding-bottom:16px; }
+.service-navbar .public-mobile-nav { display:none; }
+.service-footer :is(p,li>a,span),.service-footer .border-t p { font-size:20px; }
+@media(min-width:1900px){ .service-navbar .navbar-shell {grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:'brand nav actions';padding-bottom:18px;}.service-navbar .desktop-main-nav{gap:24px;}.service-navbar .desktop-main-nav>a{font-size:22px;}}
+@media(max-width:1023px){ .service-navbar .navbar-shell{padding:16px 22px;}.service-navbar .desktop-main-nav{display:none;}.service-navbar .public-mobile-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 24px;}.service-navbar .public-mobile-nav>a{font-size:20px;}.service-navbar .public-mobile-action{margin-left:0;} }
+@media(max-width:700px){ .service-navbar .navbar-shell{grid-template-columns:minmax(0,1fr);grid-template-areas:'brand' 'actions';gap:16px;padding:16px;}.service-navbar .navbar-actions{max-width:100%;flex-wrap:wrap;gap:10px;}.service-navbar .navbar-actions>div{flex-wrap:wrap;justify-content:flex-end;max-width:100%;}.service-navbar .navbar-actions :is(button,a,select){font-size:20px;}.service-navbar .navbar-brand>div>div:first-child{font-size:26px;}.service-navbar .public-mobile-nav{padding:10px 16px;}.app-content .marketing .audience-panel{padding:24px;}.app-content .grid-cols-2{grid-template-columns:minmax(0,1fr);}.app-content .marketing .contact-method a{font-size:20px;}}
+.app-content .text-xl {font-size:24px;line-height:1.45;}
+.app-content .text-2xl {font-size:30px;line-height:1.4;}
+.app-content .text-3xl {font-size:36px;line-height:1.35;}
+/* Keep the desktop header on one row, with a slightly smaller navigation scale. */
+@media(min-width:1280px){
+ .service-navbar .navbar-shell{max-width:none;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:'brand nav actions';gap:20px;padding:16px 28px;}
+ .service-navbar .desktop-main-nav{display:flex;flex-wrap:nowrap;justify-content:center;gap:clamp(12px,1.3vw,24px);font-size:18px;}
+ .service-navbar .desktop-main-nav>a{font-size:18px;line-height:1.5;white-space:nowrap;padding:14px 0;}
+ .service-navbar .desktop-main-nav svg{width:19px;height:19px;}
+ .service-navbar .navbar-actions{gap:10px;flex-wrap:nowrap;}
+ .service-navbar .navbar-actions>div{gap:10px;flex-wrap:nowrap;}
+ .service-navbar .navbar-actions :is(button,a,select){font-size:18px;white-space:nowrap;}
+ .service-navbar .navbar-actions button{padding-left:12px;padding-right:12px;}
+ .service-navbar .language-switch{padding:8px;gap:5px;}
+ .service-navbar .navbar-brand>div>div:first-child{font-size:24px;}
+ .service-navbar .navbar-brand>div>div:nth-child(2){font-size:16px;letter-spacing:0;}
+ .service-navbar .public-mobile-nav{display:none;}
+}
+@media(min-width:1280px) and (max-width:1499px){
+ .service-navbar .navbar-shell{gap:12px;padding-left:18px;padding-right:18px;}
+ .service-navbar .desktop-main-nav{gap:12px;}
+ .service-navbar .desktop-main-nav>a,.service-navbar .navbar-actions :is(button,a,select){font-size:16px;}
+ .service-navbar .navbar-actions{gap:7px;}.service-navbar .navbar-actions>div{gap:7px;}
+ .service-navbar .navbar-actions button{padding-left:9px;padding-right:9px;}
+ .service-navbar .navbar-actions button>span.truncate{max-width:125px;}
+ .service-navbar .navbar-brand>div>div:first-child{font-size:22px;}
+}
+#repair-orders,#shop-orders,#support-inbox {scroll-margin-top:160px;}
+@media(max-width:700px){#repair-orders,#shop-orders,#support-inbox{scroll-margin-top:260px;}}

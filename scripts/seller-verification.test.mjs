@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {INDIAN_STATES,validateSellerBasic,validateSellerDocuments,validatePayout,payoutSummary,validateUpload,previewRegistry,formatGSTIN,normalizeId,sellerStatus,nameChangeAllowedAt} from '../src/utils/sellerVerification.js';
+assert.equal(INDIAN_STATES.length,36);assert.equal(new Set(INDIAN_STATES).size,36);
+const basic={shopTypes:['mobile'],name:'Ramesh Kumar',phone:'9123456789',email:'new@example.com',shopName:'Ramesh Repair',address:'Shop 12, Raj Nagar, Ghaziabad',city:'Ghaziabad',state:'Uttar Pradesh',pincode:'201002'};
+assert.deepEqual(validateSellerBasic(basic),{});for(const key of Object.keys(basic))assert.ok(validateSellerBasic({...basic,[key]:''})[key],key+' must be validated');
+const documents={gstin:'09AAAAA0000A1Z5',pan:'AAAAA0000A',udyam:'UDYAM-UP-28-0045812',license:{name:'license.pdf'}};
+assert.deepEqual(validateSellerDocuments(documents),{});assert.equal(normalizeId(formatGSTIN(documents.gstin)),documents.gstin);
+assert.ok(validateSellerDocuments({...documents,gstin:'XXAAAAA0000A1Z5'}).gstin);assert.ok(validateSellerDocuments({...documents,pan:'1234567890'}).pan);assert.ok(validateSellerDocuments({...documents,udyam:'bad'}).udyam);assert.ok(validateSellerDocuments({...documents,license:null}).license);assert.equal(validateSellerDocuments({...documents,udyam:'UP12345678901'}).udyam,undefined);
+assert.ok(validateUpload({type:'text/html',size:1024}));assert.ok(validateUpload({type:'image/png',size:6*1024*1024}));assert.equal(validateUpload({type:'application/pdf',size:1024}),null);
+const bank={holder:'Ramesh Kumar',bank:'State Bank of India',number:'1234567890123',ifsc:'SBIN0001234'};assert.deepEqual(validatePayout(bank),{});for(const key of Object.keys(bank))assert.ok(validatePayout({...bank,[key]:''})[key]);const masked=payoutSummary(bank);assert.equal(masked.last4,'0123');assert.ok(!JSON.stringify(masked).includes(bank.number));assert.equal(masked.verificationStatus,'pending');
+assert.ok(previewRegistry('rejected','Ramesh').some(row=>row.status==='failed'));assert.ok(previewRegistry('pending','Ramesh').some(row=>row.status==='flagged'));assert.ok(previewRegistry('verified','Ramesh').every(row=>row.status==='passed'));
+assert.equal(sellerStatus({verificationStatus:'pending',sellerVerificationPreview:{status:'VERIFIED'}}),'PENDING_REVIEW');assert.equal(sellerStatus({verificationStatus:'approved',businessProofValidUntil:'2000-01-01'}),'EXPIRED');assert.equal(nameChangeAllowedAt({}),null);assert.ok(nameChangeAllowedAt({shopNameChangedAt:new Date().toISOString()}));
+console.log('Seller validation checks passed: 36 regions, fields, document formats, upload limits, masked bank references, preview isolation and cooldown.');

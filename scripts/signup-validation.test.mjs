@@ -1,0 +1,17 @@
+﻿import assert from 'node:assert/strict';
+import {passwordStatus,validateCustomerSignup} from '../src/utils/signupValidation.js';
+const valid={name:'Sourabh Singh',phone:'9123456789',email:'person@example.com',locality:'Sanjay Nagar',password:'Better!Key123',confirmPassword:'Better!Key123'};
+assert.deepEqual(validateCustomerSignup(valid),{});
+assert.equal(passwordStatus('abc').strength,'Weak');
+assert.equal(passwordStatus('Good@123').strength,'Medium');
+assert.equal(passwordStatus(valid.password).strength,'Strong');
+for(const password of ['Short1!','UPPERCASE1!','lowercase1!','NoNumbers!!','NoSpecial123','Space Pass1!'])assert.ok(validateCustomerSignup({...valid,password,confirmPassword:password}).password);
+assert.ok(validateCustomerSignup({...valid,confirmPassword:'Other!123'}).confirmPassword);
+assert.ok(validateCustomerSignup({...valid,confirmPassword:''}).confirmPassword);
+for(const phone of ['1234567890','9999999999','9876abc123','912345678','91234567890'])assert.ok(validateCustomerSignup({...valid,phone}).phone);
+for(const email of ['bad','a@b','a@@b.com','a@.com','a b@example.com'])assert.ok(validateCustomerSignup({...valid,email}).email);
+for(const name of ['  ','A','John123','<script>'])assert.ok(validateCustomerSignup({...valid,name}).name);
+for(const locality of [' ','12345','<script>'])assert.ok(validateCustomerSignup({...valid,locality}).locality);
+assert.deepEqual(validateCustomerSignup({...valid,name:'सौरभ सिंह',locality:'राज नगर सेक्टर 4'}),{});
+assert.deepEqual(validateCustomerSignup({...valid,name:"Anne O'Neill"}),{});
+console.log('Passed signup validation: password rules, strength, confirmation, phone, email, names and localities including Hindi.');

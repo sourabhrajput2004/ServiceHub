@@ -1,0 +1,16 @@
+﻿import assert from 'node:assert/strict';
+import { registrationContactError } from '../src/utils/registrationValidation.js';
+const accounts=[{email:'customer@example.com',phone:'9891234567',role:'customer'},{email:'owner@shop.com',phone:'+91 98765 43210',role:'shop_owner'}];
+assert.equal(registrationContactError({email:'new@example.com',phone:'9000000001'},accounts),'');
+assert.equal(registrationContactError({email:' CUSTOMER@EXAMPLE.COM ',phone:'9000000001'},accounts),'This email already exists. Please sign in.');
+assert.equal(registrationContactError({email:'new@example.com',phone:'+91 98912 34567'},accounts),'This phone number already exists. Please sign in.');
+assert.equal(registrationContactError({email:'owner@shop.com',phone:'09876543210'},accounts),'This email and phone number already exist. Please sign in.');
+assert.equal(registrationContactError({email:'customer@example.com',phone:'9876543210'},accounts),'This email and phone number already exist. Please sign in.');
+assert.equal(registrationContactError({email:'',phone:''},accounts),'');
+assert.equal(registrationContactError({email:'new@example.com',phone:''},[{email:'',phone:''}]),'');
+console.log('Passed 7 duplicate signup checks: email case, phone formatting, both fields, cross-account matches and empty values.');
+import {registrationContactErrors} from '../src/utils/registrationValidation.js';
+const duplicateFields=registrationContactErrors({email:'EXISTING@example.com',phone:'9876543210'},[{email:'existing@example.com',phone:'+91 98765 43210'}]);
+assert.deepEqual(duplicateFields,{email:'This email already exists. Please sign in.',phone:'This phone number already exists. Please sign in.'});
+assert.deepEqual(registrationContactErrors({email:'new@example.com',phone:'9000000001'},accounts),{});
+console.log('Per-field duplicate email and phone errors passed.');

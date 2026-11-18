@@ -1,0 +1,12 @@
+﻿import assert from 'node:assert/strict';
+import { proofStatus, isDemoProof } from '../src/utils/proofStatus.js';
+const shop={verificationStatus:'approved',businessProofType:'Shop & Establishment Act License',businessProofNumber:'TEST-1'};
+assert.equal(proofStatus(shop,'2026-11-07').label,'License verified');
+assert.equal(proofStatus({...shop,businessProofType:'Udyam Registration (MSME)'},'2026-11-07').label,'Business proof reviewed');
+assert.equal(proofStatus({...shop,businessProofValidUntil:'2026-11-06'},'2026-11-07').label,'Document expired');
+assert.equal(proofStatus({...shop,businessProofValidUntil:'2026-11-07'},'2026-11-07').tone,'approved');
+assert.equal(proofStatus({...shop,verificationStatus:'pending'},'2026-11-07').label,'Review pending');
+assert.equal(proofStatus({...shop,businessProofNumber:''},'2026-11-07').label,'View document details');
+assert.equal(isDemoProof({...shop,businessProofNumber:'GZB-DL-2023-8991'}),true);
+assert.equal(isDemoProof(shop),false);
+console.log('Passed 8 business proof status and demo-label checks.');

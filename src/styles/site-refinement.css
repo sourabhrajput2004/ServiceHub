@@ -1,0 +1,531 @@
+/* Shared public pages and workspace surfaces. */
+#root :is(.biz-page,.biz-dialog,.biz-finance,.wf-page,.wf-modal,.member-shell,.seller-workspace-shell,.customer-workspace-shell,.ad-workspace,.account-page) {
+ --biz-panel:var(--ui-surface);--biz-soft:var(--ui-soft);--biz-text:var(--ui-ink);--biz-muted:var(--ui-muted);--biz-border:var(--ui-line);
+ --wf-panel:var(--ui-surface);--wf-bg:var(--ui-soft);--wf-text:var(--ui-ink);--wf-muted:var(--ui-muted);--wf-line:var(--ui-line);
+ --sv-panel:var(--ui-surface);--sv-bg:var(--ui-soft);--sv-text:var(--ui-ink);--sv-muted:var(--ui-muted);--sv-border:var(--ui-line);
+ color:var(--ui-ink);
+}
+#root .home-hero .hero-layout {grid-template-columns:minmax(0,1fr) minmax(340px,470px);align-items:center;padding-top:58px;padding-bottom:40px;gap:72px;}
+#root .home-hero .hero-copy>p {max-width:510px;margin-bottom:0;}
+#root .home-hero .hero-copy h1 {font-size:clamp(45px,5.5vw,76px);margin-top:15px;}
+#root .home-carousel-wrap {padding-bottom:56px;}
+#root .home-carousel-wrap .repair-carousel {border-radius:18px;box-shadow:0 18px 45px -28px #14283c70;}
+#root .home-carousel-wrap .repair-carousel-slide {aspect-ratio:2.65;min-height:340px;max-height:480px;}
+#root .home-carousel-wrap .repair-carousel-slide>img {object-position:center 48%;}
+#root .home-carousel-wrap .repair-carousel-copy {inset:auto 42px 38px;}
+#root .home-carousel-wrap .repair-carousel-copy h2 {font-size:clamp(30px,3.5vw,46px);max-width:550px;margin-bottom:20px;}
+#root .home-carousel-wrap .repair-carousel-copy a {font-size:17px;}
+#root .home-flow-wrap {margin-top:38px;}
+#root .home-flow-wrap .repair-preview {position:static;transform:none;width:100%;margin:0;padding:24px;border:1px solid var(--ui-line);background:var(--ui-surface);border-radius:16px;box-shadow:var(--ui-shadow);}
+#root .home-flow-wrap .repair-preview>p {font-size:16px;margin-bottom:0;}
+#root .home-flow-wrap .repair-preview :is(strong,small) {font-size:16px;}
+#root .home-flow-wrap .preview-header strong {font-size:18px;}
+#root .home-flow-wrap .home-flow-steps {gap:10px;}
+#root .home-flow-wrap .home-flow-steps button {font-size:16px;}
+#root .marketing .eyebrow {text-transform:none;letter-spacing:.04em;font-size:14px;}
+#root .marketing :is(.about-hero,.contact-layout) {padding-top:64px;padding-bottom:64px;gap:64px;}
+#root .marketing .about-hero h1,#root .marketing .contact-copy h1 {font-size:clamp(38px,4vw,58px);line-height:1.12;}
+#root .marketing :is(.about-manifesto,.audience-panel,.contact-form-card,.faq-list,.principle-grid article) {border:1px solid var(--ui-line);border-radius:16px;background:var(--ui-surface);box-shadow:var(--ui-shadow);}
+#root .marketing .about-manifesto {background:#eaf2f0;padding:40px;}
+#root .marketing .about-manifesto h2 {font-size:38px;color:#204e49;}
+#root .marketing .about-story {padding-top:56px;padding-bottom:56px;gap:56px;border-color:var(--ui-line);}
+#root .marketing .audience-section {background:var(--ui-soft);padding:60px 0;}
+#root .marketing .audience-tabs button {font-size:17px;padding:12px 18px;}
+#root .marketing .audience-panel {padding:32px;}
+#root .marketing .audience-panel :is(li,p) {font-size:17px;line-height:1.7;}
+#root .marketing .principle-grid {gap:20px;}
+#root .marketing .principle-grid article {padding:28px;}
+#root .marketing .principle-grid h3 {font-size:19px;}
+#root .marketing .principle-grid p {font-size:17px;}
+#root .marketing .contact-form-card {padding:32px;}
+#root .marketing .form-kicker {font-size:14px;color:var(--ui-muted);letter-spacing:.04em;}
+#root .marketing .contact-form-card h2 {font-size:28px;}
+#root .marketing .form-fields {gap:20px;}
+#root .marketing .form-fields label {font-size:17px;line-height:1.5;}
+#root .marketing .form-fields :is(input,select,textarea) {font-size:17px;background:var(--ui-surface);border:1px solid var(--ui-line);border-radius:10px;padding:12px 14px;box-shadow:none;color:var(--ui-ink);}
+#root .marketing .contact-form-card .marketing-button {font-size:17px;}
+#root .marketing :is(.contact-form-note,.contact-method small,.form-intro,.manifesto-location) {font-size:14px;}
+#root .marketing .contact-method :is(a,p) {font-size:18px;}
+#root .marketing .repair-help-note {padding:22px;border-color:var(--ui-line);background:var(--ui-soft);border-radius:14px;}
+#root .marketing .repair-help-note h3 {font-size:18px;}
+#root .marketing .repair-help-note p {font-size:17px;}
+#root .marketing .faq-section {gap:60px;padding-top:56px;padding-bottom:64px;}
+#root .marketing .faq-item h3 button {font-size:17px;line-height:1.5;padding:20px 0;}
+#root .marketing .faq-item p {font-size:17px;}
+#root .marketing .faq-item {border-color:var(--ui-line);}
+#root .service-footer {background:var(--ui-surface);border-color:var(--ui-line);color:var(--ui-muted);}
+#root .service-footer :is(p,li,a,nav,span).text-lg {font-size:17px;line-height:1.7;}
+#root .service-footer h2 {font-size:14px;text-transform:none;letter-spacing:.015em;}
+#root .service-footer .text-3xl {font-size:25px;}
+#root .service-footer :is(.border-t) {border-color:var(--ui-line);}
+#root .page-directory {padding-top:40px;padding-bottom:56px;}
+#root .page-directory>.directory-heading {max-width:none;text-align:left;padding:0;margin-bottom:28px;background:transparent;border:0;border-radius:0;box-shadow:none;}
+#root .page-directory>.directory-heading h1 {font-size:clamp(28px,3vw,38px);font-weight:650;line-height:1.25;}
+#root .page-directory>.directory-heading p {font-size:17px;margin-top:10px;color:var(--ui-muted);}
+#root .page-directory .directory-filters {padding:22px;background:var(--ui-surface);border-color:var(--ui-line);box-shadow:var(--ui-shadow);border-radius:14px;margin-bottom:26px;}
+#root .page-directory .directory-filters :is(input,select) {font-size:17px;min-height:46px;background:var(--ui-surface);border-color:var(--ui-line);box-shadow:none;}
+#root .page-directory .directory-filters button {font-size:17px;min-height:44px;border-color:var(--ui-line);box-shadow:none;}
+#root .page-directory .directory-filters label {font-size:16px;}
+#root .page-directory .sd-card {border:1px solid var(--ui-line);background:var(--ui-surface);border-radius:16px;box-shadow:var(--ui-shadow);overflow:hidden;}
+#root .page-directory .sd-cover {height:230px;overflow:hidden;}
+#root .page-directory .sd-cover img {height:100%;width:100%;object-fit:cover;transition:transform .5s;}
+#root .page-directory .sd-content {padding:24px;}
+#root .page-directory .sd-name-row h2 {font-size:21px;line-height:1.35;}
+#root .page-directory :is(.sd-categories span,.sd-rating,.sd-service-count) {font-size:14px;}
+#root .page-directory :is(.sd-main-actions button,.sd-contact-actions button,.sd-contact-actions a) {font-size:16px;min-height:42px;border-radius:9px;}
+#root .page-directory .sd-book-button {background:#315be8;color:white;border-color:#315be8;box-shadow:0 4px 12px #315be81a;}
+#root .service-navbar .navbar-shell {padding-top:14px;padding-bottom:14px;}
+#root .service-navbar :is(.public-nav-link,.navbar-actions>a) {font-size:17px;}
+#root .service-navbar .navbar-brand {letter-spacing:-.035em;}
+#root :is(.seller-sidebar,.mn-sidebar) {background:var(--ui-surface);border-color:var(--ui-line);}
+#root :is(.seller-sidebar,.mn-sidebar) nav a {font-size:17px;min-height:44px;padding-top:11px;padding-bottom:11px;border-radius:9px;}
+#root :is(.seller-sidebar-heading,.mn-sidebar-identity) {padding-top:24px;padding-bottom:24px;}
+#root :is(.seller-sidebar-heading,.mn-sidebar-identity) strong {font-size:18px;line-height:1.4;}
+#root :is(.seller-sidebar-heading,.mn-sidebar-identity) small {font-size:14px;}
+#root :is(.seller-sidebar,.mn-sidebar) :is(h3,.mn-sidebar-label) {font-size:13px;letter-spacing:.09em;font-weight:650;}
+#root .member-shell .mn-header {padding-top:12px;padding-bottom:12px;background:var(--ui-surface);border-color:var(--ui-line);box-shadow:0 3px 18px #172b4505;}
+#root .member-shell .mn-controls :is(.mn-person,.mn-logout,.language-switch) {font-size:16px;border-radius:10px;box-shadow:none;}
+#root .member-shell .mn-logo {box-shadow:none;}
+#root :is(.seller-workspace-main,.member-shell .wf-content) {background:var(--ui-soft);}
+#root :is(.sd-heading,.cu-heading,.biz-heading,.md-heading,.wf-title,.tj-heading,.sa-heading,.ad-heading) {margin-bottom:28px;gap:20px;}
+#root :is(.sd-heading,.cu-heading,.biz-heading,.md-heading,.wf-title,.tj-heading,.sa-heading,.ad-heading,.tech-account-heading) h1 {font-size:clamp(27px,2.6vw,36px)!important;line-height:1.25;font-weight:650;}
+#root :is(.sd-heading,.cu-heading,.biz-heading,.md-heading,.wf-title,.tj-heading,.sa-heading,.ad-heading) p {font-size:17px;line-height:1.65;color:var(--ui-muted);}
+#root :is(.cu-eyebrow,.wf-eyebrow,.biz-eyebrow,.tj-heading>div>p) {font-size:13px;letter-spacing:.06em;text-transform:none;}
+#root :is(.sd-panel,.sd-metric,.cu-panel,.cu-stat,.cu-support-card,.wf-panel,.wf-stat,.biz-stat,.so-ledger,.sa-panel,.sa-identity,.tech-account-section,.tech-job-card,.tj-filter-card,.tj-utilities>details,.md-card,.pi-part-card,.sc-card,.bl-statements,.ad-panel,.ad-shop-card,.support-workspace) {
+ background:var(--ui-surface);color:var(--ui-ink);border:1px solid var(--ui-line);border-radius:14px;box-shadow:var(--ui-shadow);
+}
+#root :is(.sd-metric,.cu-stat,.wf-stat,.biz-stat) {padding:24px;border-top-width:1px;}
+#root :is(.sd-metric,.cu-stat,.wf-stat,.biz-stat)>strong {font-size:32px;line-height:1.2;font-weight:650;letter-spacing:-.045em;}
+#root :is(.sd-metric,.cu-stat,.wf-stat,.biz-stat)>span {font-size:16px;color:var(--ui-muted);}
+#root :is(.sd-panel,.cu-panel,.sa-panel,.ad-panel)>header {padding:22px 24px;border-color:var(--ui-line);}
+#root :is(.sd-panel,.cu-panel,.sa-panel,.ad-panel,.wf-panel,.tech-account-section) h2 {font-size:19px;font-weight:650;line-height:1.4;}
+#root :is(.sd-panel,.cu-panel,.sa-panel,.ad-panel)>header p {font-size:16px;color:var(--ui-muted);}
+#root :is(.cu-stats,.sd-metrics,.wf-stats,.biz-stat-grid) {gap:18px;margin-bottom:26px;}
+#root :is(.cu-overview-grid,.sd-grid) {gap:22px;}
+#root :is(.cu-stat-icon,.cu-device-icon,.sd-metric-icon) {border-radius:10px;box-shadow:none;}
+#root .cu-stat.blue .cu-stat-icon {background:#edf2ff;color:#315be8;}
+#root .cu-stat.green .cu-stat-icon {background:#e6f4ee;color:#278269;}
+#root .cu-stat.amber .cu-stat-icon {background:#fff3df;color:#976314;}
+#root :is(.wf-panel,.tech-account-section) {padding:24px;}
+#root :is(.wf-panel,.tech-account-read,.tech-account-grid,.cu-recent-list,.sd-list,.sc-card,.pi-part-card,.md-card-body) {font-size:17px;}
+#root :is(.cu-recent-list h3,.sc-card h3,.pi-part-card h3,.md-card h3) {font-size:18px;line-height:1.4;}
+#root :is(.cu-recent-list p,.tech-job-heading p,.md-card p,.sc-card p,.pi-part-card p) {font-size:16px;color:var(--ui-muted);}
+#root :is(.cu-ready,.cu-support-card) {background:var(--ui-surface);border-color:var(--ui-line);border-left:3px solid #3b9d8b;border-radius:14px;}
+#root .cu-empty {padding:42px 24px;}
+#root .cu-empty h3 {font-size:19px;margin-top:16px;}
+#root .cu-empty p {font-size:17px;}
+#root :is(.biz-toolbar,.pi-filters,.bl-filters,.md-toolbar,.so-toolbar,.sc-filters) {border-color:var(--ui-line);border-radius:12px;box-shadow:none;background:var(--ui-surface);padding:18px 20px;gap:14px;}
+#root :is(.biz-page,.wf-page,.ad-workspace,.account-page,.seller-page-content) :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea) {font-size:17px;min-height:44px;border-radius:9px;border-color:var(--ui-line);background:var(--ui-surface);box-shadow:none;color:var(--ui-ink);}
+#root :is(.biz-page,.wf-page,.ad-workspace,.account-page) :is(input,select,textarea):focus {border-color:#7490e9;box-shadow:0 0 0 3px #315be812;}
+#root :is(.cu-button,.wf-primary,.sv-button,.ad-button,.bc-add,.sc-card button,.pi-actions button,.md-card-management button,.biz-actions button,.so-actions button) {font-size:16px;min-height:40px;padding:10px 15px;border-radius:9px;box-shadow:none;}
+#root :is(.cu-primary,.wf-primary,.sv-button:not(.sv-button-secondary),.ad-button:not(.ad-danger)) {background:#315be8;color:#fff;border-color:#315be8;box-shadow:0 4px 12px #315be818;}
+#root :is(.cu-primary,.wf-primary,.sv-button,.ad-button,.sd-book-button):hover:not(:disabled) {transform:translateY(-1px);box-shadow:0 6px 15px #315be824;}
+#root :is(.biz-table,.sd-table-scroll table,.so-table,.bl-statements table,.ad-panel table) {font-size:16px;}
+#root :is(.biz-table,.sd-table-scroll table,.so-table,.bl-statements table,.ad-panel table) th {font-size:14px;font-weight:600;letter-spacing:.02em;background:var(--ui-soft);color:var(--ui-muted);padding-top:14px;padding-bottom:14px;}
+#root :is(.biz-table,.sd-table-scroll table,.so-table,.bl-statements table,.ad-panel table) td {padding-top:16px;padding-bottom:16px;border-color:var(--ui-line);}
+#root :is(.biz-table,.sd-table-scroll table,.so-table,.bl-statements table,.ad-panel table) tbody tr:hover {background:var(--ui-soft);}
+#root :is(.biz-pill,.cu-status,.sd-job-status,.tech-job-status,.wf-role-tag) {font-size:14px;line-height:1.5;font-weight:550;padding:4px 9px;border-radius:6px;box-shadow:none;}
+#root :is(.tech-job-card,.compact-order-card) {padding:22px;}
+#root .tech-job-card .tech-job-heading h2 {font-size:19px;}
+#root .tech-job-card>footer button {font-size:14px;}
+#root .md-card .md-photo {height:190px;object-fit:cover;}
+#root .md-card-body {padding:20px;}
+#root :is(.md-card,.pi-part-card,.sc-card) {overflow:hidden;}
+#root :is(.tech-account-read,.profile-data) dt {font-size:14px;color:var(--ui-muted);}
+#root :is(.tech-account-read,.profile-data) dd {font-size:17px;color:var(--ui-ink);}
+#root :is(.account-page-heading,.settings-heading,.tech-account-heading) {background:transparent;box-shadow:none;border:0;}
+#root :is(.settings-save-bar,.tech-account-actions) {border-radius:12px;border:1px solid var(--ui-line);background:var(--ui-surface);box-shadow:0 8px 24px #172b4510;}
+#root .support-workspace {--chat-surface:var(--ui-surface);--chat-panel:var(--ui-soft);--chat-line:var(--ui-line);--chat-ink:var(--ui-ink);--chat-muted:var(--ui-muted);--chat-accent:#315be8;}
+#root .support-workspace .support-heading {padding:22px 24px;background:var(--ui-surface);border-color:var(--ui-line);}
+#root .support-workspace .support-heading h2 {font-size:21px;}
+#root .support-workspace .support-heading p {font-size:16px;}
+#root .support-workspace :is(.thread-title,.conversation-identity h3) {font-size:17px;}
+#root .support-workspace :is(.thread-preview,.thread-counterpart,.conversation-identity p,.message-bubble) {font-size:16px;}
+#root .support-workspace :is(.thread-bottom,.thread-booking,.message-author,.message-time) {font-size:14px;}
+#root .support-workspace .message-bubble {border-radius:12px;box-shadow:none;line-height:1.65;}
+#root .support-workspace .mine .message-bubble {background:#315be8;color:#fff;}
+#root .app-content .auth-page .auth-shell {max-width:560px;border:1px solid var(--ui-line);border-radius:18px;box-shadow:0 20px 60px -30px #172b4540;background:var(--ui-surface);padding:36px;color:var(--ui-ink);}
+#root .auth-page .auth-heading h1 {font-size:30px;line-height:1.25;}
+#root .auth-page .auth-heading p {font-size:17px;}
+#root .auth-page :is(label,.auth-role-tabs button) {font-size:16px;}
+#root .auth-page :is(input,select) {font-size:17px;border-radius:10px;background:var(--ui-surface);border-color:var(--ui-line);box-shadow:none;}
+#root .auth-page button[type=submit] {font-size:17px;border-radius:10px;min-height:46px;}
+#root .auth-page .auth-role-tabs {background:var(--ui-soft);border:1px solid var(--ui-line);border-radius:10px;padding:4px;}
+#root .auth-page :is(.text-sm,.text-xs) {font-size:16px;}
+#root .member-access-main {background:var(--ui-soft);}
+#root .member-access-main>section {border:1px solid var(--ui-line);border-radius:16px;background:var(--ui-surface);box-shadow:var(--ui-shadow);}
+:root[data-theme=dark] #root .marketing .about-manifesto {background:#1b3437;}
+:root[data-theme=dark] #root .marketing .about-manifesto h2 {color:#cae5df;}
+:root[data-theme=dark] #root .service-footer :is(h2,a,p,span) {color:var(--ui-muted);}
+:root[data-theme=dark] #root .cu-stat.blue .cu-stat-icon {background:#243657;color:#b9caff;}
+:root[data-theme=dark] #root .cu-stat.green .cu-stat-icon {background:#203c38;color:#a7dfc5;}
+:root[data-theme=dark] #root .cu-stat.amber .cu-stat-icon {background:#3d3428;color:#edd09d;}
+@media(hover:hover) {
+ #root .page-directory .sd-card:hover .sd-cover img {transform:scale(1.025);}
+ #root :is(.md-card,.pi-part-card,.sc-card,.tech-job-card):hover {border-color:#9aafd7;}
+}
+@media(min-width:1100px) {
+ #root .seller-workspace-shell .seller-page-content,#root .member-shell .wf-content {padding:34px 32px 48px;}
+}
+@media(max-width:900px) {
+ #root .home-hero .hero-layout {gap:32px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+ #root .home-carousel-wrap .repair-carousel-slide {min-height:300px;aspect-ratio:2.2;}
+ #root .marketing :is(.about-hero,.contact-layout) {gap:32px;}
+ #root .marketing .faq-section {gap:28px;}
+}
+@media(max-width:680px) {
+ #root .home-hero .hero-layout {grid-template-columns:minmax(0,1fr);padding-top:36px;padding-bottom:28px;gap:26px;}
+ #root .home-hero .hero-copy h1 {font-size:47px;}
+ #root .home-carousel-wrap {padding-bottom:32px;}
+ #root .home-carousel-wrap .repair-carousel-slide {aspect-ratio:1.2;min-height:310px;}
+ #root .home-carousel-wrap .repair-carousel-copy {inset:auto 24px 28px;}
+ #root .home-carousel-wrap .repair-carousel-copy h2 {font-size:32px;}
+ #root .home-flow-wrap .repair-preview {padding:18px;}
+ #root .marketing :is(.about-hero,.contact-layout,.about-story,.faq-section) {grid-template-columns:minmax(0,1fr);padding-top:36px;padding-bottom:36px;gap:28px;}
+ #root .marketing :is(.about-manifesto,.contact-form-card,.audience-panel) {padding:24px;}
+ #root .page-directory .directory-filters {padding:16px;}
+ #root .page-directory .directory-filters :is(input,select) {min-width:0;max-width:100%;}
+ #root .page-directory .sd-cover {height:200px;}
+ #root .page-directory .sd-content {padding:20px;}
+ #root .page-directory .sd-name-row h2 {font-size:19px;}
+ #root :is(.sd-metric,.cu-stat,.wf-stat,.biz-stat) {padding:18px;}
+ #root :is(.sd-metric,.cu-stat,.wf-stat,.biz-stat)>strong {font-size:27px;}
+ #root :is(.sd-panel,.cu-panel,.sa-panel,.ad-panel)>header {padding:18px;}
+ #root :is(.wf-panel,.tech-account-section,.tech-job-card,.compact-order-card) {padding:18px;}
+ #root .app-content .auth-page {padding:28px 16px 44px;}
+ #root .app-content .auth-page .auth-shell {padding:26px 22px;}
+ #root .service-navbar .navbar-shell {padding-top:10px;padding-bottom:10px;}
+}
+@media(prefers-reduced-motion:reduce) {
+ #root .page-directory .sd-cover img {transition:none;}
+ #root .page-directory .sd-card:hover .sd-cover img {transform:none;}
+}
+
+#root .page-directory .location-search-label {font-size:16px;font-weight:550;margin-bottom:8px;color:var(--ui-muted);}
+#root :is(.ta-panel,.ta-row,.mt-stats,.ma-payroll,.ma-explorer,.online-repair-payment,.guest-payment-card) {border-color:var(--ui-line);border-radius:14px;background:var(--ui-surface);box-shadow:var(--ui-shadow);color:var(--ui-ink);}
+#root :is(.ta-row,.mt-stats,.ma-payroll) {padding:22px;}
+#root :is(.ta-heading,.ta-row,.mt-stats,.ma-explorer) :is(p,label,small,button) {font-size:17px;}
+#root .ta-statuses button {min-height:40px;border-radius:9px;padding:9px 15px;font-size:16px;}
+#root .ta-saved-record {font-size:16px;line-height:1.7;padding:16px;border-radius:10px;border-color:var(--ui-line);background:var(--ui-soft);}
+#root .ma-period-tabs button {min-height:38px;font-size:16px;padding:8px 14px;border-radius:8px;}
+#root .ma-date-controls {font-size:16px;}
+#root .mt-trend {gap:16px;}
+#root .mt-trend>div {border-radius:10px;background:var(--ui-soft);padding:18px;}
+#root .mt-trend>div>span {font-size:14px;color:var(--ui-muted);}
+#root .mt-trend>div>strong {font-size:23px;}
+#root .sa-workspace .sa-details dt {font-size:14px;color:var(--ui-muted);}
+#root .sa-workspace .sa-details dd {font-size:17px;color:var(--ui-ink);}
+#root .sa-workspace .sa-identity-copy h2 {font-size:25px;}
+#root .sa-workspace .sa-identity-copy p {font-size:17px;}
+#root .sa-workspace .sa-panel-heading {padding:22px 24px;border-color:var(--ui-line);}
+#root .sa-workspace .sa-button {font-size:16px;padding:10px 15px;min-height:40px;border-radius:9px;box-shadow:none;}
+#root .online-repair-payment {padding:24px;}
+#root .online-repair-payment h3 {font-size:20px;}
+#root .online-repair-payment p {font-size:17px;line-height:1.7;color:var(--ui-muted);}
+#root .online-repair-payment :is(button,a,input) {font-size:16px;min-height:40px;border-radius:9px;}
+#root .online-payment-qr {border:1px solid var(--ui-line);border-radius:12px;padding:8px;background:#fff;}
+#root .online-payment-link {gap:10px;}
+#root .online-payment-link input {min-width:0;}
+#root .payment-test-badge {font-size:13px;padding:5px 9px;border-radius:6px;letter-spacing:.02em;}
+#root .guest-payment-card {max-width:580px;padding:32px;}
+#root .guest-payment-card h1 {font-size:28px;line-height:1.3;}
+#root .guest-payment-card p {font-size:17px;}
+#root .guest-payment-amount {font-size:42px;letter-spacing:-.05em;}
+#root .guest-payment-card :is(.guest-pay-button,.guest-check-button) {font-size:17px;min-height:46px;border-radius:10px;}
+#root .bc-page>header h1 {font-size:34px;}
+#root .bc-page>header p {font-size:17px;color:var(--ui-muted);}
+#root .bill-result-actions {gap:12px;}
+#root .bill-result-actions :is(button,a) {font-size:16px;padding:11px 16px;border-radius:9px;min-height:42px;}
+@media(max-width:680px) {
+ #root :is(.ta-row,.mt-stats,.ma-payroll,.online-repair-payment,.guest-payment-card) {padding:20px;}
+ #root .online-payment-link {flex-wrap:wrap;}
+ #root .online-payment-link input {flex-basis:100%;width:100%;}
+ #root .guest-payment-amount {font-size:36px;}
+}
+
+/* Footer text and its background must always use the same theme. */
+:root[data-theme=light] #root footer.service-footer,
+:root:not([data-theme=dark]) #root footer.service-footer {
+ background:#17334b!important;color:#cfdeeb!important;border-color:#294a63;
+}
+:root #root footer.service-footer :is(p,li>a,nav>a,span) {font-size:17px;line-height:1.75;opacity:1;}
+:root[data-theme=light] #root footer.service-footer :is(p,a,span,h2,nav),
+:root:not([data-theme=dark]) #root footer.service-footer :is(p,a,span,h2,nav) {color:#cfdeeb!important;}
+:root #root footer.service-footer h2 {font-size:17px;font-weight:650;line-height:1.5;}
+:root[data-theme=light] #root footer.service-footer h2,
+:root:not([data-theme=dark]) #root footer.service-footer h2,
+:root[data-theme=light] #root footer.service-footer .footer-brand,
+:root:not([data-theme=dark]) #root footer.service-footer .footer-brand {color:#f2f7ff!important;}
+:root[data-theme=dark] #root footer.service-footer {background:#14263c!important;color:#c5d3e5!important;border-color:#354b65;}
+:root[data-theme=dark] #root footer.service-footer :is(p,a,span,nav) {color:#c5d3e5!important;}
+:root[data-theme=dark] #root footer.service-footer :is(h2,.footer-brand) {color:#f0f5fc!important;}
+:root #root footer.service-footer .footer-brand {font-size:28px;}
+:root #root footer.service-footer .footer-brand>span:last-child {color:#a2c5ff!important;font-size:28px;}
+:root #root footer.service-footer .footer-brand-icon {color:#fff!important;}
+:root #root footer.service-footer a:hover {color:#b9dcff!important;}
+:root #root footer.service-footer a:focus-visible {outline:3px solid #6487ef;outline-offset:4px;}
+
+#root .repair-carousel .repair-carousel-pagination {
+ position:absolute;bottom:12px;left:50%;translate:-50% 0;z-index:2;display:flex;align-items:center;gap:3px;
+}
+#root .repair-carousel .repair-carousel-pagination button {
+ display:grid;place-items:center;width:28px;height:28px;min-height:28px!important;padding:0;
+ border:0;border-radius:50%;background:transparent;box-shadow:none;cursor:pointer;
+}
+#root .repair-carousel-pagination button:before {content:'';width:8px;height:8px;border-radius:50%;background:#ffffff70;transition:background-color .2s;}
+#root .repair-carousel-pagination button[aria-current=true]:before {background:#fff;}
+#root .repair-carousel-pagination button:hover:before {background:#fff;}
+#root .home-carousel-wrap .repair-carousel-copy {bottom:48px;}
+@media(max-width:680px) {
+ #root .home-carousel-wrap .repair-carousel-copy {bottom:48px;}
+}
+
+#root .benefits-ribbon {border-top:1px solid var(--ui-line);border-bottom:1px solid var(--ui-line);background:var(--ui-surface);}
+#root .benefits-ribbon .home-benefits {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;padding-top:28px;padding-bottom:28px;}
+#root .home-benefit {display:flex;align-items:flex-start;gap:16px;min-width:0;padding:4px 0;}
+#root .home-benefit-icon {display:grid;place-items:center;width:46px;height:46px;flex-shrink:0;border-radius:12px;background:#edf2ff;color:#315be8;}
+#root .marketing .home-benefit h3 {font-size:18px;font-weight:600;line-height:1.4;letter-spacing:-.02em;margin:0 0 5px;}
+#root .marketing .home-benefit p {font-size:15px;line-height:1.65;margin:0;color:var(--ui-muted);}
+:root[data-theme=dark] #root .home-benefit-icon {background:#253a5b;color:#b7caff;}
+#root .cu-order-link {width:auto;min-width:90px;font-size:14px;padding:8px 12px;white-space:nowrap;border-radius:8px;}
+#root .conversation-back {width:auto;min-width:60px;padding:8px 12px;font-size:14px;}
+#root .vh-page .vh-pagination .vh-button {width:auto;min-width:78px;padding:8px 12px;font-size:14px;}
+@media(max-width:760px) {
+ #root .benefits-ribbon .home-benefits {grid-template-columns:minmax(0,1fr);gap:0;padding-top:14px;padding-bottom:14px;}
+ #root .home-benefit {padding:20px 0;border-bottom:1px solid var(--ui-line);}
+ #root .home-benefit:last-child {border-bottom:0;}
+}
+
+
+
+/* Fluid page containers follow the available viewport and workspace width. */
+#root {--page-gutter:clamp(20px,2.5vw,48px);}
+#root .marketing .marketing-wrap {width:100%;max-width:none;margin-left:0;margin-right:0;padding-left:var(--page-gutter);padding-right:var(--page-gutter);box-sizing:border-box;}
+#root .service-footer .footer-container {width:100%;max-width:none;margin:0;padding-left:var(--page-gutter);padding-right:var(--page-gutter);box-sizing:border-box;}
+#root .app-content :is(.page-directory,.customer-overview,.customer-repairs-workspace,.seller-page-content,.sa-workspace,.wf-content,.biz-page,.account-page) {max-width:none;width:100%;box-sizing:border-box;}
+#root .app-content .page-directory {padding-left:var(--page-gutter);padding-right:var(--page-gutter);}
+#root .member-shell .wf-content {width:100%;max-width:none;box-sizing:border-box;}
+#root .marketing {background:#f0f5fc;}
+#root .marketing .home-hero {background:linear-gradient(120deg,#dfeaff 0%,#e9edff 48%,#dcf2eb 100%);}
+#root .marketing .about-hero {background:linear-gradient(115deg,#e0eaff 0%,#eef0ff 55%,#def1eb 100%);}
+#root .marketing .about-manifesto {background:#cfe9e2;border-color:#acd6ca;}
+#root .marketing .about-story {background:#e5eefb;border-top:1px solid #c9d9f0;border-bottom:1px solid #c9d9f0;}
+#root .marketing .audience-section {background:#eae5f6;}
+#root .marketing .audience-panel {background:#f8f5ff;border-color:#d7ccec;box-shadow:0 12px 32px -20px #65519555;}
+#root .marketing .principle-grid article:nth-child(1) {background:#e1ecff;border-color:#bfd3f5;}
+#root .marketing .principle-grid article:nth-child(2) {background:#ddf0e9;border-color:#b7dacf;}
+#root .marketing .principle-grid article:nth-child(3) {background:#eee5f9;border-color:#d8c6ef;}
+#root .marketing .principle-grid article:nth-child(1)>svg {color:#315dc2;}
+#root .marketing .principle-grid article:nth-child(2)>svg {color:#207c66;}
+#root .marketing .principle-grid article:nth-child(3)>svg {color:#7953ab;}
+#root .marketing .about-contact {background:#dce7fa;border-color:#bbceef;}
+#root .marketing .how-section {background:#e2efef;border-color:#bdd8d4;}
+#root .marketing .owner-section {background:#e8eef9;}
+#root .marketing .owner-banner {background:linear-gradient(115deg,#204965,#173448 70%);border-color:#315d77;}
+#root .marketing .contact-layout {background:linear-gradient(120deg,#e0ecff,#e8f4ef);}
+#root .marketing .contact-form-card {background:#f7faff;border-color:#c1d3ef;}
+#root .marketing .repair-help-note {background:#dbe9f8;border-color:#b9d0eb;}
+#root .marketing .faq-section {background:#eaf0fa;}
+#root .marketing .faq-list {background:#f6f9ff;border-color:#cbd9ee;}
+#root .marketing .service-tile.blue {background:#dfe9ff;border-color:#bdd0f7;}
+#root .marketing .service-tile.purple {background:#ece1f8;border-color:#d5beed;}
+#root .marketing .service-tile.orange {background:#f9ead9;border-color:#e8cdae;}
+#root .marketing .service-tile.green {background:#dbefe7;border-color:#afd8c7;}
+#root .benefits-ribbon {background:#e8f0fb;border-color:#c5d6ee;}
+#root .home-benefit:nth-child(2) .home-benefit-icon {background:#cee8df;color:#236d5c;}
+#root .home-benefit:nth-child(3) .home-benefit-icon {background:#e1d6f2;color:#704b9d;}
+#root .page-directory {background:linear-gradient(135deg,#e8effb,#edf4f5);}
+#root .page-directory .directory-filters {background:#f4f8ff;border-color:#c6d7f0;}
+#root .page-directory .sd-card .sd-content {background:#f7faff;}
+#root :is(.cu-stat.blue,.sd-metric.sd-tone-blue) {background:#e3ecff;border-color:#c3d4f5;}
+#root :is(.cu-stat.green,.sd-metric.sd-tone-green) {background:#dff0e9;border-color:#b9dcce;}
+#root :is(.cu-stat.amber,.sd-metric.sd-tone-amber) {background:#fbefdb;border-color:#ead3aa;}
+#root :is(.cu-stat.slate,.sd-metric.sd-tone-violet) {background:#ece6f7;border-color:#d4c7e9;}
+#root .cu-support-card {background:#dfefe9;border-color:#b5d5c7;}
+#root :is(.biz-toolbar,.pi-filters,.bl-filters,.md-toolbar,.so-toolbar,.sc-filters,.tj-filter-card) {background:#eaf1fd;border-color:#c9d9f1;}
+#root .service-footer .footer-container>.border-t {border-color:#ffffff26;}
+:root[data-theme=dark] #root .marketing {background:#14243a;}
+:root[data-theme=dark] #root .marketing :is(.home-hero,.about-hero,.contact-layout) {background:linear-gradient(120deg,#1a3154,#203650 50%,#1c3b3c);}
+:root[data-theme=dark] #root .marketing .about-manifesto {background:#244a45;border-color:#37675e;}
+:root[data-theme=dark] #root .marketing :is(.about-story,.owner-section,.faq-section) {background:#192e49;border-color:#344e70;}
+:root[data-theme=dark] #root .marketing .audience-section {background:#2b2943;}
+:root[data-theme=dark] #root .marketing .audience-panel {background:#302f4c;border-color:#514b70;}
+:root[data-theme=dark] #root .marketing .principle-grid article:nth-child(1) {background:#203b60;border-color:#365680;}
+:root[data-theme=dark] #root .marketing .principle-grid article:nth-child(2) {background:#22463f;border-color:#3a665b;}
+:root[data-theme=dark] #root .marketing .principle-grid article:nth-child(3) {background:#39304e;border-color:#5a4976;}
+:root[data-theme=dark] #root .marketing .principle-grid article>svg {color:#bfd6ff;}
+:root[data-theme=dark] #root .marketing :is(.about-contact,.repair-help-note) {background:#253d5a;border-color:#3e5d7d;}
+:root[data-theme=dark] #root .marketing .how-section {background:#1b383c;border-color:#33595b;}
+:root[data-theme=dark] #root .marketing :is(.contact-form-card,.faq-list) {background:#1e334d;border-color:#3d5877;}
+:root[data-theme=dark] #root .marketing .service-tile.blue {background:#233b61;border-color:#3c5683;}
+:root[data-theme=dark] #root .marketing .service-tile.purple {background:#3c2e51;border-color:#5c4678;}
+:root[data-theme=dark] #root .marketing .service-tile.orange {background:#483a2d;border-color:#6c543c;}
+:root[data-theme=dark] #root .marketing .service-tile.green {background:#23483e;border-color:#3e6a59;}
+:root[data-theme=dark] #root .benefits-ribbon {background:#20364f;border-color:#39536f;}
+:root[data-theme=dark] #root .home-benefit:nth-child(2) .home-benefit-icon {background:#2c534a;color:#bce3d4;}
+:root[data-theme=dark] #root .home-benefit:nth-child(3) .home-benefit-icon {background:#4a3b61;color:#d9c9f6;}
+:root[data-theme=dark] #root .page-directory {background:linear-gradient(130deg,#192e48,#1d363b);}
+:root[data-theme=dark] #root .page-directory :is(.directory-filters,.sd-card .sd-content) {background:#203650;border-color:#3a5577;}
+:root[data-theme=dark] #root :is(.cu-stat.blue,.sd-metric.sd-tone-blue) {background:#213b60;border-color:#3e5a82;}
+:root[data-theme=dark] #root :is(.cu-stat.green,.sd-metric.sd-tone-green) {background:#22463f;border-color:#3d675a;}
+:root[data-theme=dark] #root :is(.cu-stat.amber,.sd-metric.sd-tone-amber) {background:#443a2a;border-color:#6a573a;}
+:root[data-theme=dark] #root :is(.cu-stat.slate,.sd-metric.sd-tone-violet) {background:#352f4c;border-color:#554975;}
+:root[data-theme=dark] #root .cu-support-card {background:#24483f;border-color:#3d675a;}
+:root[data-theme=dark] #root :is(.biz-toolbar,.pi-filters,.bl-filters,.md-toolbar,.so-toolbar,.sc-filters,.tj-filter-card) {background:#243b59;border-color:#3d5878;}
+@media(max-width:680px) {
+ #root {--page-gutter:18px;}
+ #root .marketing .marketing-wrap {padding-left:var(--page-gutter);padding-right:var(--page-gutter);}
+}
+
+#root .member-shell:has(.mn-sidebar.is-expanded) .wf-content {width:calc(100% - 270px);margin-left:270px;}
+#root .member-shell:has(.mn-sidebar.is-collapsed) .wf-content {width:calc(100% - 76px);margin-left:76px;}
+:root #root footer.service-footer .footer-brand-icon svg {color:#fff!important;}
+
+/* One-line brand occupies the space previously used by the locality label. */
+#root .service-navbar .navbar-brand {gap:12px;align-items:center;}
+#root .service-navbar .brand-wordmark,#root .member-shell .mn-brand strong {display:block;font-size:36px;font-weight:800;line-height:1.15;letter-spacing:-.045em;white-space:nowrap;}
+#root .service-navbar .brand-symbol,#root .member-shell .mn-logo {width:48px;height:48px;min-width:48px;border-radius:13px;}
+#root .service-navbar .brand-symbol svg,#root .member-shell .mn-logo svg {width:25px;height:25px;}
+@media(max-width:1100px) {
+ #root .service-navbar .brand-wordmark,#root .member-shell .mn-brand strong {font-size:32px;}
+}
+@media(max-width:600px) {
+ #root .service-navbar .brand-wordmark,#root .member-shell .mn-brand strong {font-size:28px;}
+ #root .service-navbar .brand-symbol,#root .member-shell .mn-logo {width:42px;height:42px;min-width:42px;border-radius:11px;}
+ #root .service-navbar .brand-symbol svg,#root .member-shell .mn-logo svg {width:22px;height:22px;}
+}
+
+/* Compact shared footer with short link rows and a slim policy bar. */
+#root .service-footer .footer-container {padding-top:28px;padding-bottom:16px;}
+#root .service-footer .footer-main {display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr) minmax(0,1.2fr) minmax(0,1.25fr);gap:28px;padding-bottom:24px;align-items:start;}
+:root #root footer.service-footer .footer-brand {display:inline-flex;align-items:center;gap:9px;line-height:1.2;font-size:26px;font-weight:750;text-decoration:none;white-space:nowrap;}
+:root #root footer.service-footer .footer-brand>span:last-child {margin-left:-9px;font-size:26px;line-height:1.2;}
+#root .service-footer .footer-brand-icon {display:grid;place-items:center;width:38px;height:38px;flex-shrink:0;border-radius:10px;background:#315be8;}
+:root #root footer.service-footer .footer-identity p {margin:10px 0 0;max-width:320px;font-size:16px;line-height:1.6;}
+:root #root footer.service-footer h2 {font-size:16px;line-height:1.4;margin:0 0 10px;letter-spacing:0;}
+#root .service-footer .footer-link-list {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 16px;padding:0;margin:0;list-style:none;}
+#root .service-footer .footer-link-list li {margin:0;padding:0;}
+:root #root footer.service-footer .footer-link-list li>a {display:inline-flex;align-items:center;min-height:32px;padding:3px 0;font-size:16px;line-height:1.5;}
+:root #root footer.service-footer .footer-contact p {font-size:16px;line-height:1.6;margin:0 0 8px;}
+:root #root footer.service-footer .footer-contact>a {display:inline-flex;align-items:center;min-height:32px;font-size:16px;font-weight:600;line-height:1.5;}
+#root .service-footer .footer-bottom {display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 24px;padding-top:14px;border-top:1px solid #ffffff26;}
+:root #root footer.service-footer .footer-bottom :is(p,a,span) {font-size:14px;line-height:1.6;margin:0;}
+#root .service-footer .footer-policy-links {display:flex;align-items:center;flex-wrap:wrap;gap:12px;}
+#root .seller-utility-footer {padding:14px var(--page-gutter,24px);gap:10px 20px;line-height:1.5;}
+#root .seller-utility-footer nav {gap:8px 20px;}
+@media(max-width:1100px) {
+ #root .service-footer .footer-main {grid-template-columns:1fr 1fr;gap:22px 32px;}
+}
+@media(max-width:600px) {
+ #root .service-footer .footer-container {padding-top:24px;padding-bottom:16px;}
+ #root .service-footer .footer-main {gap:20px;padding-bottom:20px;}
+ #root .service-footer .footer-identity,#root .service-footer .footer-contact {grid-column:1/-1;}
+ #root .service-footer .footer-link-list {grid-template-columns:minmax(0,1fr);gap:0;}
+ #root .service-footer .footer-bottom {align-items:flex-start;flex-direction:column;gap:8px;}
+ #root .seller-utility-footer {padding:12px 18px;}
+}
+
+/* Compact authentication cards share a comfortable 44px control height. */
+#root .app-content .auth-page {padding:28px 20px 40px;}
+#root .app-content .auth-page .auth-shell {width:100%;max-width:460px;padding:26px;border-radius:16px;}
+#root .auth-page .auth-shell .auth-heading {margin-bottom:18px;}
+#root .auth-page .auth-shell .auth-heading :is(h1,h2) {font-size:28px;line-height:1.25;margin-bottom:8px;}
+#root .auth-page .auth-shell .auth-heading p {font-size:16px;line-height:1.55;}
+#root .auth-page .auth-shell .auth-role-tabs {margin-bottom:18px;padding:4px;gap:4px;border-radius:10px;}
+#root .auth-page .auth-shell .auth-role-tabs button {font-size:15px;min-height:40px;padding:8px 10px;line-height:1.4;}
+#root .auth-page .auth-shell form {gap:16px;}
+#root .auth-page .auth-shell form label {font-size:16px;line-height:1.4;margin-bottom:6px;}
+#root .auth-page .auth-shell form input {min-height:44px;padding:10px 14px 10px 42px;font-size:16px;line-height:1.4;}
+#root .auth-page .auth-shell .auth-password-field input {padding-right:50px;}
+#root .auth-page .auth-shell form>button {min-height:44px;padding:10px 16px;font-size:16px;line-height:1.4;margin-top:2px;}
+#root .auth-page .auth-shell>div:not(.auth-heading):not(.auth-role-tabs) {font-size:15px;line-height:1.55;}
+#root .auth-page .auth-shell>div.border-t {margin-top:20px;padding-top:16px;}
+#root .auth-page .auth-shell>div.border-t>span {font-size:14px;margin-bottom:10px;}
+#root .auth-page .auth-shell>div.border-t button {font-size:15px;min-height:40px;padding:9px 12px;}
+#root .app-content .page-register {padding:28px 20px 40px;}
+#root .page-register .register-shell {width:100%;max-width:780px;padding:28px;border-radius:16px;}
+#root .page-register .register-shell.register-detail-shell {max-width:660px;}
+#root .page-register .register-shell .register-heading {margin-bottom:22px;}
+#root .page-register .register-shell .register-heading h2 {font-size:28px;line-height:1.3;margin-bottom:8px;}
+#root .page-register .register-shell .register-heading p {font-size:16px;line-height:1.55;}
+#root .page-register .register-shell .register-role-grid {gap:16px;}
+#root .page-register .register-shell .register-role-card {padding:20px;gap:18px;border-radius:12px;}
+#root .page-register .register-shell .register-role-card h3 {font-size:20px;line-height:1.4;}
+#root .page-register .register-shell .register-role-card p {font-size:15px;line-height:1.6;}
+#root .page-register .register-shell .register-role-card>div:last-child {padding-top:14px;font-size:15px;}
+#root .page-register .register-shell .register-role-card .w-12 {width:40px;height:40px;margin-bottom:12px;}
+#root .page-register .register-shell .register-customer-form {margin-top:22px;padding-top:20px;}
+#root .page-register .register-detail-shell .register-customer-form {margin-top:0;padding-top:0;}
+#root .page-register .register-shell .register-customer-form h4 {font-size:20px;line-height:1.4;padding-bottom:12px;margin-bottom:16px;}
+#root .page-register .register-shell .register-fields {gap:14px 18px;}
+#root .page-register .register-shell .register-fields label {font-size:15px;line-height:1.4;margin-bottom:6px;}
+#root .page-register .register-shell .register-fields :is(input,select) {font-size:16px;line-height:1.4;min-height:44px;padding:10px 12px;}
+#root .page-register .register-shell .registration-password input {padding-right:50px;}
+#root .page-register .register-shell .registration-eye {width:38px;height:38px;min-height:38px;padding:0;}
+#root .page-register .register-shell .register-fields small {font-size:13px;line-height:1.5;}
+#root .page-register .register-shell :is(.signup-password-feedback,.password-rules,.registration-field-error) {font-size:13px;line-height:1.5;}
+#root .page-register .register-shell .password-rules {gap:3px;margin-top:8px;}
+#root .page-register .register-shell .register-customer-form>.registration-submit {font-size:16px;min-height:44px;padding:10px 18px;margin-top:20px;}
+#root .page-register .register-shell .register-signin {font-size:15px;line-height:1.5;padding-top:16px;margin-top:20px;}
+#root .page-register .register-shell .registration-error {font-size:14px;line-height:1.5;margin-top:12px;}
+#root .register-shell .auth-switch-button {font-size:14px;min-height:36px;padding:7px 10px;margin-bottom:12px;}
+#root .member-access .member-access-main {max-width:460px;margin:28px auto;padding:0 18px;}
+#root .member-access .member-access-main form {padding:24px;border-radius:14px;}
+#root .member-access .member-access-main h1 {font-size:27px;line-height:1.3;margin:6px 0 10px;}
+#root .member-access .member-access-main form>p {font-size:15px;line-height:1.55;margin-bottom:16px;}
+#root .member-access .member-access-main .wf-field {margin-bottom:14px;font-size:15px;gap:6px;}
+#root .member-access .member-access-main input {min-height:44px;font-size:16px;padding:10px 12px;}
+#root .member-access .member-access-main .wf-primary {min-height:44px;padding:10px 14px;margin-top:14px;font-size:16px;}
+#root .admin-auth>main {padding:28px 18px;}
+#root .admin-auth .admin-auth-card {max-width:420px;padding:24px;border-radius:16px;}
+#root .admin-auth .admin-auth-card h1 {font-size:27px;line-height:1.3;margin:8px 0;}
+#root .admin-auth .admin-auth-card>p {font-size:15px;line-height:1.55;}
+#root .admin-auth .admin-auth-card form {gap:14px;margin-top:18px;}
+#root .admin-auth .admin-auth-card label {font-size:15px;gap:6px;}
+#root .admin-auth .admin-auth-card input {font-size:16px;min-height:44px;padding:10px 12px;}
+#root .admin-auth .admin-primary {font-size:16px;min-height:44px;padding:10px 14px;}
+#root .auth-shop-register {max-width:1040px;margin:0 auto;padding:28px 20px 40px;}
+#root .auth-shop-register .shop-register-heading {padding:24px;margin-bottom:20px;border-radius:16px;}
+#root .auth-shop-register .shop-register-heading h1 {font-size:28px;line-height:1.3;margin:8px 0 10px;}
+#root .auth-shop-register .shop-register-heading p {font-size:16px;line-height:1.6;}
+#root .auth-shop-register .shop-auth-links {font-size:15px;margin-bottom:18px;}
+#root .auth-shop-register .shop-register-form>div {padding:22px;margin-top:18px;border-radius:14px;}
+#root .auth-shop-register .shop-register-form .grid {gap:16px;}
+#root .auth-shop-register .shop-register-form label {font-size:15px;line-height:1.5;margin-bottom:6px;}
+#root .auth-shop-register .shop-register-form :is(input:not([type=checkbox]):not([type=radio]),select,textarea) {font-size:16px;min-height:44px;padding:10px 12px;}
+#root .auth-shop-register .shop-register-form :is(h3,p) {line-height:1.5;}
+#root .auth-shop-register .shop-register-form h3 {font-size:20px;}
+#root .auth-shop-register .shop-register-form p {font-size:15px;}
+#root .auth-shop-register .shop-register-form button {font-size:16px;min-height:44px;}
+#root .sv-wizard-page .sv-wizard-layout {max-width:1040px;margin:0 auto;}
+#root .sv-wizard-page .sv-step-card {border-radius:16px;}
+#root .sv-wizard-page .sv-step-card>header {padding:20px 24px;}
+#root .sv-wizard-page .sv-step-card>header h2 {font-size:25px;line-height:1.3;margin:5px 0 7px;}
+#root .sv-wizard-page .sv-step-card>header p {font-size:16px;line-height:1.55;}
+#root .sv-wizard-page .sv-step-content {padding:22px 24px;}
+#root .sv-wizard-page .sv-form-grid {gap:16px;}
+#root .sv-wizard-page .sv-step-card label {font-size:15px;line-height:1.5;}
+#root .sv-wizard-page .sv-step-card :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea) {min-height:44px;font-size:16px;padding:10px 12px;margin-top:6px;}
+#root .sv-wizard-page .sv-step-actions {padding:16px 24px;}
+#root .sv-wizard-page .sv-step-card .sv-button {font-size:16px;min-height:44px;padding:10px 16px;}
+@media(max-width:680px) {
+ #root .app-content :is(.auth-page,.page-register) {padding:22px 16px 32px;}
+ #root .app-content .auth-page .auth-shell,#root .page-register .register-shell {padding:22px 20px;}
+ #root .page-register .register-shell .register-role-grid {grid-template-columns:minmax(0,1fr);gap:12px;}
+ #root .page-register .register-shell .register-role-card {padding:18px;}
+ #root .page-register .register-shell .register-fields {grid-template-columns:minmax(0,1fr);}
+ #root .sv-wizard-page .sv-step-card>header,#root .sv-wizard-page .sv-step-content {padding:18px;}
+ #root .sv-wizard-page .sv-step-actions {padding:14px 18px;}
+}
+
+/* Authentication pages end at their content instead of reserving a viewport. */
+#root .app-frame:has(.app-content :is(.auth-page,.page-register,.auth-shop-register,.sv-wizard-page,.member-access,.admin-auth)) {min-height:0;}
+#root .app-content:has(:is(.auth-page,.page-register,.auth-shop-register,.sv-wizard-page,.member-access,.admin-auth)) {flex:0 0 auto;}
+#root .app-content :is(.auth-page,.page-register,.auth-shop-register,.sv-wizard-page,.member-access,.admin-auth) {min-height:0;}
+#root .app-content :is(.auth-page,.page-register) {padding-top:24px;padding-bottom:24px;}
+#root .auth-shop-register {padding-bottom:24px;}
+#root .member-access .member-access-main {margin-top:24px;margin-bottom:24px;}
+#root .page-directory {min-height:0;}
+@media(max-width:680px) {
+ #root .app-content :is(.auth-page,.page-register) {padding-top:18px;padding-bottom:20px;}
+}

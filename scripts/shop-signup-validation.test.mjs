@@ -1,0 +1,18 @@
+﻿import assert from 'node:assert/strict';
+import {validateShopSignup,SHOP_CATEGORIES,BUSINESS_DOCUMENTS} from '../src/utils/shopSignupValidation.js';
+const today='2026-11-08';
+const valid={shopName:'Tech Repair & Care',ownerName:'Rajan Kumar',phone:'9123456789',email:'owner@example.com',locality:'Raj Nagar',address:'Shop 12, Main Road, Raj Nagar, Ghaziabad',password:'Repair!Shop123',confirmPassword:'Repair!Shop123',coordinates:{lat:28.67,lng:77.44},categories:[SHOP_CATEGORIES[0]],businessProofType:BUSINESS_DOCUMENTS[0].id,businessProofNumber:'UDYAM-UP-28-0045812',businessProofAuthority:'',businessProofState:'',businessProofIssuedOn:'',businessProofValidUntil:'',liveKycImage:'data:image/jpeg;base64,dGVzdA==',gstin:''};
+const check=patch=>validateShopSignup({...valid,...patch},today);
+assert.deepEqual(check({}),{});
+assert.ok(check({shopName:'1'}).shopName);assert.ok(check({shopName:'<script>'}).shopName);
+assert.ok(check({ownerName:'123'}).ownerName);assert.ok(check({phone:'1234567890'}).phone);assert.ok(check({email:'not-mail'}).email);
+assert.ok(check({locality:'  '}).locality);assert.ok(check({address:'  '}).address);
+assert.ok(check({coordinates:null}).coordinates);assert.ok(check({coordinates:{lat:NaN,lng:77}}).coordinates);assert.ok(check({coordinates:{lat:91,lng:77}}).coordinates);assert.ok(check({coordinates:{lat:28,lng:181}}).coordinates);assert.equal(check({coordinates:{lat:0,lng:0}}).coordinates,undefined);
+assert.ok(check({password:'weak',confirmPassword:'weak'}).password);assert.ok(check({confirmPassword:'mismatch'}).confirmPassword);
+assert.ok(check({businessProofType:'unknown'}).businessProofType);assert.ok(check({businessProofNumber:'123'}).businessProofNumber);assert.ok(check({businessProofType:'GSTIN Certificate',businessProofNumber:'wrong'}).businessProofNumber);
+assert.ok(check({gstin:'INVALID'}).gstin);assert.equal(check({gstin:'09AAAAA0000A1Z5'}).gstin,undefined);
+assert.ok(check({businessProofAuthority:'<invalid>'}).businessProofAuthority);assert.ok(check({businessProofState:'123'}).businessProofState);
+assert.ok(check({businessProofIssuedOn:'2026-11-09'}).businessProofIssuedOn);assert.ok(check({businessProofIssuedOn:'2026-02-30'}).businessProofIssuedOn);assert.ok(check({businessProofValidUntil:'2026-11-01'}).businessProofValidUntil);assert.equal(check({businessProofIssuedOn:'2026-01-01',businessProofValidUntil:'2027-01-01'}).businessProofValidUntil,undefined);
+assert.ok(check({liveKycImage:null}).liveKycImage);assert.ok(check({liveKycImage:'not-an-image'}).liveKycImage);assert.ok(check({categories:[]}).categories);assert.ok(check({categories:['unknown']}).categories);
+assert.deepEqual(check({shopName:'राज मोबाइल रिपेयर',ownerName:'राजन कुमार',locality:'संजय नगर'}),{});
+console.log('Shop signup checks passed: business details, password, dates, documents, GPS, photo and categories.');

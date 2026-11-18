@@ -1,0 +1,5 @@
+﻿import assert from 'node:assert/strict';
+const luminance=hex=>{const rgb=hex.slice(1).match(/../g).map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);return rgb[0]*.2126+rgb[1]*.7152+rgb[2]*.0722;};
+const pairs=[['Primary text','#e5edf8','#192d43'],['Secondary text','#b8c9de','#20374f'],['Blue action text','#a9ccff','#243e5d'],['Present badge','#a6edcd','#194838'],['Absent badge','#ffbfcb','#4c2936'],['Late badge','#f5d48c','#493c22'],['Active tab','#eaf3ff','#2c4f79'],['Disabled field','#c5d2e3','#22364d'],['Placeholder','#aebfd4','#172a40'],['Green header identity','#b9efdc','#1c443c'],['Dark repair heading','#e5edf8','#101e2e'],['Dark repair empty text','#b8c9de','#172a40'],['Light repair heading','#18334e','#ffffff'],['Light repair description','#52677e','#f3f6fa']];
+for(const [name,fg,bg] of pairs){const a=luminance(fg),b=luminance(bg),ratio=(Math.max(a,b)+.05)/(Math.min(a,b)+.05);assert.ok(ratio>=4.5,name+' has insufficient contrast: '+ratio);}
+console.log('Passed normal-text contrast >= 4.5:1 for 14 light/dark heading, empty-state, text, badge and control pairs.');

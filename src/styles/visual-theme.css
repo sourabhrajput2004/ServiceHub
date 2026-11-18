@@ -1,0 +1,109 @@
+/* ServiceHub: navy, slate and restrained blue accents. */
+:root {
+  --surface-border:#d5e1f5;
+  --surface-shadow:0 3px 0 #d7e1f0,0 12px 28px -12px #2343792b,0 1px 0 #ffffff inset;
+  --primary-shadow:0 4px 0 #173d75,0 9px 18px -5px #245bb245;
+}
+body { background:#f0f3f8; }
+#root>div,.app-content { background:transparent; }
+#root { background:radial-gradient(ellipse at 4% 12%,#e0e9f5 0,transparent 38%),radial-gradient(ellipse at 98% 32%,#e9eef5 0,transparent 35%),radial-gradient(ellipse at 40% 95%,#e6edf4 0,transparent 36%),#f3f5f9; }
+.app-content { position:relative; isolation:isolate; }
+.app-content .workspace-page { background:transparent; }
+.service-navbar { background:linear-gradient(110deg,#fffffff5,#f8fafcf5 65%,#eef2f8f5); border-bottom:1px solid #cedcf0; box-shadow:0 5px 24px #2c497a0c,0 1px 0 #ffffff inset; backdrop-filter:blur(20px); }
+.service-navbar .navbar-brand>div:first-child { background:linear-gradient(140deg,#4675ba,#245bb2 55%,#183a72); box-shadow:0 4px 0 #17355f,0 8px 18px #245bb233,inset 0 1px 1px #ffffff70; }
+.service-navbar .public-nav-link[aria-current=page] { color:#204f98; text-shadow:0 2px 12px #245bb214; }
+.service-navbar .language-switch { background:linear-gradient(145deg,#fff,#eaf0fb); border-color:#cedbf0; box-shadow:0 2px 0 #d7e1ef,inset 0 1px 0 white; }
+.service-navbar .navbar-actions button { box-shadow:0 2px 0 #bbcdbf50,0 5px 12px #294d6b08; }
+.app-content :is(.bg-white.rounded-2xl,.bg-white.rounded-3xl,.contact-form-card,.audience-panel,.repair-finder) { background:linear-gradient(145deg,#fff 35%,#f7faff); border-color:var(--surface-border); box-shadow:var(--surface-shadow); }
+.app-content :is(.bg-white.rounded-xl,.principle-grid article) { border-color:#d8e3f4; box-shadow:0 2px 0 #dfe7f1,0 5px 16px -9px #27456c2b; }
+.app-content :is(button,a).bg-blue-600,.app-content .marketing-button:not(.light-button) { background:linear-gradient(125deg,#326ac0,#245bb2 50%,#204b88); border:1px solid #204d95; box-shadow:var(--primary-shadow),inset 0 1px 0 #ffffff42; transition:transform .2s,box-shadow .2s,background .2s; }
+.app-content :is(button,a).bg-blue-600:active,.app-content .marketing-button:active { transform:translateY(3px); box-shadow:0 1px 0 #173d75; }
+.app-content :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea) { background-color:#f5f8ff; border-color:#c9d8ed; box-shadow:inset 0 2px 4px #254b7810,0 1px 0 #fff; }
+.app-content :is(input,select,textarea):focus { background-color:#fff; border-color:#3d70b8; }
+.app-content .bg-blue-50 { background-color:#e9efff; }
+.app-content .bg-emerald-50 { background-color:#e2f5ee; }
+.app-content .bg-slate-100 { background-color:#eaf0fa; }
+.app-content .bg-amber-50 { background-color:#fff3dc; }
+/* Dashboards: one tinted introduction, followed by clearly separated raised cards. */
+:is(.page-customer,.page-workshop,.page-profile,.page-directory)>div:first-child { padding:28px; border-radius:24px; background:linear-gradient(120deg,#e4ecf6,#eaf0f7 55%,#e0e8f3); border:1px solid #cfdbea; box-shadow:inset 0 1px 0 #fff,0 9px 28px -18px #385b9f70; }
+:is(.page-customer,.page-workshop,.page-profile,.page-directory)>div:first-child h1 { color:#182f62; }
+.page-directory>div:first-child { max-width:none; }
+.page-customer>.grid>div { position:relative; border-top-width:4px; }
+.page-customer>.grid>div:nth-child(1) { border-top-color:#5e83ed; background:linear-gradient(145deg,#fff,#e8eff9); }
+.page-customer>.grid>div:nth-child(2) { border-top-color:#3ca98b; background:linear-gradient(145deg,#fff,#e9f2f0); }
+.page-customer>.grid>div:nth-child(3) { border-top-color:#7287a7; background:linear-gradient(145deg,#fff,#edf1f6); }
+.page-customer>.grid>div:nth-child(4) { border-top-color:#dda14b; background:linear-gradient(145deg,#fff,#f8f1e7); }
+.page-customer article { border-top:3px solid #c2d2ff; }
+.page-customer article .h-2 { box-shadow:inset 0 2px 3px #233f6e18; }
+.page-directory .shop-directory-grid>div { transition:transform .25s,box-shadow .25s; border:1px solid #cbdcf2; background:linear-gradient(155deg,#fff 45%,#eef3ff); box-shadow:var(--surface-shadow); }
+.page-directory .shop-cover { background:linear-gradient(110deg,#e5edff,#ebe7fa); }
+.page-directory .shop-cover>img { border-bottom:3px solid #d5e0f8; }
+.page-directory .shop-rating { box-shadow:0 3px 8px #263b6330; }
+.page-login,.page-register { background:radial-gradient(ellipse at 20% 30%,#d8e7ff,transparent 55%),radial-gradient(ellipse at 80% 70%,#e5dafb,transparent 50%)!important; }
+.page-login>.bg-white,.page-register>.bg-white { border-top:5px solid #6580ef; }
+/* Marketing pages share the same palette and depth. */
+.marketing { background:transparent; --ink:#1c3152; --muted:#52627a; }
+.home-hero { background:radial-gradient(ellipse at 8% 12%,#e0e9f5,transparent 48%),radial-gradient(ellipse at 98% 70%,#d6e1f0,transparent 50%),linear-gradient(125deg,#edf4ff,#e5edf7 55%,#dfe8f3); border-bottom:1px solid #cfdef2; }
+.hero-copy h1>span { color:#24549b; text-shadow:0 3px 0 #cfdded; }
+.hero-visual .visual-orbit { border-color:#c0cff0; background:radial-gradient(ellipse,#d9e4ff45,transparent 70%); }
+.hero-visual .device-art { box-shadow:12px 16px 0 #8094be30,24px 30px 45px #253b7633,inset 0 0 0 1px #c6e0db; }
+.hero-visual .repair-preview { background:linear-gradient(140deg,#fff,#eef3ff); border-color:#bacbed; box-shadow:0 5px 0 #c7d5ed,0 24px 45px -15px #294b9140,inset 0 1px 0 #fff; }
+.hero-visual .floating-check { background:linear-gradient(140deg,#fff,#e9f7f1); border-color:#c1dfd2; box-shadow:0 4px 0 #c7ddd4,0 12px 24px #315f5720; }
+.benefits-ribbon { background:linear-gradient(100deg,#e6edf6,#edf1f7,#e3ebf5); border-color:#d0dcf2; box-shadow:0 2px 8px #24478608; }
+.marketing .service-tile { border:1px solid #ccd8ee; box-shadow:0 4px 0 #d0dbee,0 12px 25px -12px #2c487b2b,inset 0 1px 0 #fff; }
+.marketing .service-tile.blue { background:linear-gradient(135deg,#eaf2ff,#dce8fc); }
+.marketing .service-tile.purple { background:linear-gradient(135deg,#edf1f7,#dce4ef); }
+.marketing .service-tile.orange { background:linear-gradient(135deg,#f8f4ed,#ece3d5); }
+.marketing .service-tile.green { background:linear-gradient(135deg,#edf3f4,#dce9eb); }
+.marketing .service-icon { filter:drop-shadow(0 6px 3px #3c5e7620); }
+.how-section,.audience-section { background:linear-gradient(120deg,#e9efff,#ebeff5 60%,#e4ebf2); border-color:#d2ddf0; }
+.how-step { border-color:#c7d6e9; }
+.owner-banner { background:linear-gradient(115deg,#162d4e,#203e65 55%,#284b65); border:1px solid #426095; box-shadow:0 5px 0 #142449,0 20px 32px -16px #233f7759,inset 0 1px 0 #ffffff20; }
+.owner-banner .eyebrow { color:#bce6d5; }.marketing .owner-banner p {color:#d3dfed;}
+.owner-banner .owner-icon { background:#ffffff0c; box-shadow:inset 0 1px 0 #ffffff30,0 5px 12px #0d204e40; }
+.about-manifesto { background:linear-gradient(135deg,#dce8ff,#e5eaf2 70%,#dce6ef); border:1px solid #c3d2ed; box-shadow:0 5px 0 #c8d4e9,0 18px 30px -15px #3358843b,inset 0 1px 0 white; }
+.about-manifesto h2 span {color:#345884;}.about-manifesto .manifesto-mark{color:#496c94;}
+.about-contact,.repair-help-note { background:linear-gradient(120deg,#e4ecff,#e6ecf4); border:1px solid #ccdaf1; box-shadow:inset 0 1px 0 #fff; }
+.principle-grid article { background:linear-gradient(140deg,#ffffffb0,#edf3ff); border:1px solid #d1def3; border-radius:18px; padding:28px; }
+.contact-method>span { background:linear-gradient(140deg,#edf2f8,#d8e6f8); color:#4763a6; box-shadow:0 3px 0 #cbd8ed,inset 0 1px 0 white; }
+.contact-form-card { border-top:4px solid #8793e6; }
+.faq-list { background:#ffffffa6; border:1px solid #d3dff0; border-radius:18px; padding:0 24px; box-shadow:0 3px 0 #dce5f2; }
+.faq-item:last-child {border-bottom:0;}
+.service-footer { background:linear-gradient(120deg,#e1e9f3,#e8edf4 55%,#e2eaf2); border-top:1px solid #c1d0e9; box-shadow:inset 0 1px 0 #ffffffc0; }
+.service-footer>.max-w-\[1216px\]>.border-t {border-color:#becfe3;}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .page-directory .shop-directory-grid>div:hover { transform:translateY(-5px); box-shadow:0 5px 0 #c6d4eb,0 20px 35px -12px #2c487b40; }
+ .app-content :is(button,a).bg-blue-600:hover { transform:translateY(-2px); box-shadow:0 6px 0 #173d75,0 14px 22px -6px #245bb245; }
+ .marketing .service-tile:hover { transform:translateY(-6px); box-shadow:0 7px 0 #c9d6e9,0 20px 30px -12px #2c487b38; }
+}
+@media(max-width:767px){
+ :is(.page-customer,.page-workshop,.page-profile,.page-directory)>div:first-child {padding:22px;border-radius:20px;}
+ .principle-grid article {padding:24px;}.faq-list{padding:0 18px;}
+}
+@media(prefers-reduced-motion:reduce){.app-content *, .service-navbar *{transition:none!important;}}
+@media print{#root,.app-content,.app-content .workspace-page{background:#fff!important;}.app-content *{box-shadow:none!important;}}
+
+/* A dark foundation anchors the lighter page surfaces. */
+:root { --surface-border:#d6dfeb; --surface-shadow:0 2px 0 #dce4ee,0 10px 26px -12px #1e3a5f24,inset 0 1px 0 #fff; --primary-shadow:0 3px 0 #193e73,0 7px 16px -5px #245bb238; }
+.marketing { --ink:#172d49; --muted:#526176; --accent:#245bb2; }
+.marketing .eyebrow {color:#496588;}
+.marketing .service-tile { color:#4d6d96; }
+.marketing .service-tile.orange {color:#866943;}
+.marketing .service-tile.green {color:#466f77;}
+.marketing .owner-banner .eyebrow {color:#bdd5ed;}
+.marketing .owner-banner p {color:#d2dfed;}
+.marketing .light-button {background:#e8eff8;color:#193b64;border:1px solid #c6d6ea;box-shadow:0 3px 0 #9db3cf;}
+.marketing .light-button:hover {background:#fff;}
+.marketing .screen-check {background:#315d85;}
+.service-navbar .desktop-main-nav>a {color:#33465e;}
+.service-navbar .desktop-main-nav>a[aria-current=page],.service-navbar .public-mobile-nav>a[aria-current=page]{color:#245bb2;}
+.service-navbar .public-nav-link[aria-current=page]:after {background:#245bb2;}
+.service-navbar .language-switch {color:#344f71;background:linear-gradient(145deg,#fff,#ecf1f7);}
+.service-footer {background:linear-gradient(115deg,#13253d,#1b3452);border-top:1px solid #29496a;box-shadow:inset 0 1px 0 #ffffff10;color:#d8e2ef;}
+.service-footer :is(h2,.text-slate-900,.text-slate-800) {color:#f3f6fb;}
+.service-footer :is(p,.text-slate-600,.text-slate-500,.text-slate-400),.service-footer .border-t p {color:#c1cfe0;}
+.service-footer :is(a.text-blue-600,.text-emerald-700,span.text-blue-600) {color:#99c4ff;}
+.service-footer li>a {color:#dce5f1;}
+.service-footer a:hover {color:#fff;}
+.service-footer .border-t {border-color:#3c516c;}
+.service-footer a:focus-visible {outline-color:#acd1ff;}

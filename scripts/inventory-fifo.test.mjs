@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {receiveBatch,takeBatches,returnBatches,allocateBillBatches,reconcileBatches,batchProfitRows} from '../src/utils/inventoryBatches.js';
+let p={id:'v1',stockQty:2,costPrice:3500,sellingPrice:4500,history:[{type:'PURCHASE',at:'2026-11-01'}]};
+p=receiveBatch(p,5,3200,'2026-11-10');assert.equal(p.stockQty,7);assert.deepEqual(p.batches.map(b=>b.purchasePrice),[3500,3200]);
+const line={inventoryItemId:'v1',isInventoryPart:true,qty:3,rate:4500,name:'Screen',variant:'OEM'};
+const bill=allocateBillBatches([p],[line]);assert.deepEqual(bill.items[0].batchAllocations.map(a=>[a.qty,a.purchasePrice]),[[2,3500],[1,3200]]);assert.equal(bill.stock[0].stockQty,4);assert.equal(bill.items[0].costTotal,10200);
+const cancelled=allocateBillBatches(bill.stock,[],bill.items);assert.deepEqual(cancelled.stock[0].batches.map(b=>b.remaining),[2,5]);
+const chosen=allocateBillBatches([p],[{...line,qty:1,preferredBatchId:p.batches[1].id}]);assert.equal(chosen.items[0].costTotal,3200);assert.deepEqual(chosen.stock[0].batches.map(b=>b.remaining),[2,4]);
+const edit=allocateBillBatches(bill.stock,[{...line,qty:1}],bill.items);assert.equal(edit.stock[0].stockQty,6);assert.equal(edit.items[0].costTotal,3500);
+assert.throws(()=>allocateBillBatches([p],[{...line,qty:8}]));assert.throws(()=>allocateBillBatches([p],[{...line,preferredBatchId:'missing'}]));assert.equal(p.stockQty,7,'Failures do not mutate input');
+const issued=takeBatches(p,1);const fromIssued=allocateBillBatches([issued.part],[{...line,qty:1}],[],[{inventoryItemId:p.id,qty:1,batchAllocations:issued.allocations}]);assert.equal(fromIssued.stock[0].stockQty,6);assert.equal(fromIssued.items[0].costTotal,3500);assert.equal(allocateBillBatches(fromIssued.stock,[],fromIssued.items).stock[0].stockQty,7);
+assert.equal(reconcileBatches({...p,stockQty:8}).stockQty,8);assert.equal(reconcileBatches({...p,stockQty:1}).stockQty,1);
+const report=batchProfitRows([{date:'2026-11-11',items:bill.items},{status:'Cancelled',date:'2026-11-11',items:chosen.items}]);assert.equal(report.reduce((n,r)=>n+r.cost,0),10200);assert.equal(report.reduce((n,r)=>n+r.profit,0),3300);
+console.log('Passed FIFO spanning batches, cost preservation, manual batch preference, exact cancellation returns, pending edits, stock adjustments, issued parts, shortage atomicity and monthly profit.');
